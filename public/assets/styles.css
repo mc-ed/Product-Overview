@@ -1,0 +1,185 @@
+
+/* Fonts and Icons */
+@font-face {
+    font-family: icons;
+    src: url('./lowes-icons.woff');
+}
+.icons {
+    font-family: icons
+}
+
+.qanda {
+    font-size: 28px;
+    color: rgb(93, 93, 93);
+}
+
+.item {
+    font-weight: bold;
+}
+
+.itemNo {
+    color: rgb(93, 93, 93);
+    font-size: 12px;
+}
+
+.itemName {
+    font-size: 22px;
+}
+.Ratings {
+    text-align: center;
+    text-decoration: none;
+}
+
+.Ratings p {
+    padding: 0px;
+    margin: 0px;
+}
+.averageRating {
+    font-size: 12px;
+    color: rgb(93, 93, 93);  
+}
+
+.Recommendations {
+    border-left: 1px solid #e5e5e5;
+    text-align: center;
+}
+
+.Recommendations p {
+    padding: 0px;
+    margin: 0px;
+}
+
+.recText {
+    font-size: 12px;
+    color: rgb(93, 93, 93)
+}
+
+.recNum {
+    color: rgb(93, 93, 93);
+    font-size: 28px;
+   
+}
+
+.QandA {
+    border-left: 1px solid #e5e5e5;
+    text-align: center;
+}
+
+.qtext {
+    font-size: 12px;
+    color: rgb(93, 93, 93);
+}
+
+.QandA p {
+    padding: 0px;
+    margin: 0px; 
+}
+
+/* Right Box */
+
+.RightBox {
+    border-width: 1px;
+    border-color: rgb(204, 204, 204);
+    border-style: solid;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 36px;
+}
+.Price {
+    margin-bottom: 20px;
+}
+
+.dollar {
+    font-size: 14.4px;
+    font-weight: bold;
+    vertical-align: super;
+}
+
+.Description {
+    font-size: 14px;
+    border-bottom-color: rgb(204, 204, 204); 
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    padding-bottom: 20px;
+}
+
+li {
+    line-height: 28px;
+}
+
+/* Add to Cart Section */
+input {
+    text-align: center;
+}
+
+.Cart {
+    line-height: 54px;
+    margin: 10px
+}
+
+.addToCart {
+    background-color: rgb(51, 135, 0);
+    color: white
+}
+
+.minusOne  {
+    border-color: rgb(255, 255, 255);
+    border: 1px solid rgb(204, 204, 204);
+    color: #0471AF;
+    font-family: icons;
+    
+}
+
+.plusOne {
+    border-color: rgb(255, 255, 255);
+    border: 1px solid rgb(204, 204, 204);
+    color: #0471AF;
+    font-family: icons;
+
+}
+
+/* Share and Save Buttons */
+.ShareSave {
+    line-height: 54px;
+    padding: 0px 20px;
+    background: rgb(255, 255, 255);
+    border-bottom: 1px solid  rgb(204, 204, 204);
+    padding: 0 20px 20px 20px;
+    
+}
+
+.save {
+    background-color: rgb(255, 255, 255);
+    color: #0471AF;
+    font-family: icons;
+    font-size: 14px 
+}
+
+.share {
+    background-color: rgb(255, 255, 255);
+    color: #0471AF;
+    font-family: icons;
+    font-size: 14px;  
+}
+
+.saveshare {
+    
+    color: #0471AF;
+    font-size: 14px;
+}
+
+.ShareSave button {
+    border-color: rgb(255, 255, 255);
+    border: 1px solid rgb(204, 204, 204);
+}
+
+.warning {
+    color: yellow;
+    font-family: icons;
+}
+
+.Availability {
+    padding: 20px
+}
