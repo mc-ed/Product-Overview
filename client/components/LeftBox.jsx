@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from './Image.jsx';
+import Thumbnails from './Thumbnails.jsx'
 import ItemNo from './ItemNo.jsx';
 import Ratings from './Ratings.jsx';
 import Recommendations from './Recommendations.jsx'
@@ -13,7 +14,9 @@ Rating */
 const LeftBox = (props) => {
     
     return (
+        
         <div class="col">
+           
             <ItemNo itemNumber={props.itemNumber} modelNumber={props.modelNumber}/>
             <p class="itemName">{props.name}</p>
             <div class="row">
@@ -21,7 +24,11 @@ const LeftBox = (props) => {
                 <Recommendations percentRecommended={props.percentRecommended}/> 
                 <QandA />
             </div>
-            <Image src={props.imagesURL} style={{width: '100%'}}/>     
+            <div class="row"> 
+                <Thumbnails thumbnailImages={props.thumbnailImages} />
+                <Image src={props.imagesURL}/> 
+            </div>
+               
         </div>
     )
 };

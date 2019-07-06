@@ -3,7 +3,8 @@ import React from 'react';
  const Image = (props) => {  
      
       return (
-      <img src={props.src} style={props.style}></img>)
+
+      <img class="col-10" src={props.src} style={props.style}></img>)
     
   }
 

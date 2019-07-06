@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Cart = (props) => {
-    console.log(props)
+    
     return (
     <div class="row Cart">
         <button class="col-2 minusOne" onClick={props.minusOne}>{'\ued5b'}</button>
