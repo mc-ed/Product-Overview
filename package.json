@@ -9,7 +9,9 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "watch": "webpack --watch",
-    "start-server": "nodemon server/server.js"
+    "start-server": "nodemon server/server.js",
+    "restart": "pm2 startOrRestart ecosystem.config.js",
+    "deploy": "pm2 deploy ecosystem.config.js production"
   },
   "dependencies": {
     "@webpack-cli/init": "^0.2.2",
@@ -27,6 +29,7 @@
     "babel-cli": "^6.26.0",
     "babel-loader": "^8.0.6",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "pm2": "^3.5.1",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5"
   },
