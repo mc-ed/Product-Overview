@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import LeftBox from './LeftBox.jsx';
 import RightBox from './RightBox.jsx';
 
@@ -22,7 +23,8 @@ class App extends Component {
             summary: ["Forged steel head for superior durability", "ProTouch grip for maximum comfort even after prolonged use", "Smooth face leaves fewer marks on surfaces"],
             quantity: 1,
             items: [],
-            total: 0
+            total: 0,
+            modal: false
             
             } 
         
@@ -30,6 +32,7 @@ class App extends Component {
         this.minusOne = this.minusOne.bind(this);
         this.typeQuantity = this.typeQuantity.bind(this);
         this.addToCart = this.addToCart.bind(this);
+        this.toggle = this.toggle.bind(this);
     }
 
 
@@ -58,12 +61,20 @@ class App extends Component {
           }))
 
     }
+
+    toggle() {
+        
+        this.setState(prevState => ({
+          modal: !prevState.modal
+        }));
+      }
     
     render() {
+       
         return (
             <div class="row">
                 
-                <LeftBox itemNumber={this.state.itemNumber} modelNumber ={this.state.modelNumber} name={this.state.name} ratings={this.state.ratings}
+                <LeftBox toggle={this.toggle} isOpen={this.state.modal} itemNumber={this.state.itemNumber} modelNumber ={this.state.modelNumber} name={this.state.name} ratings={this.state.ratings}
                 avgRating={this.state.avgRating} percentRecommended={this.state.percentRecommended}
                 imagesURL={this.state.imagesURL}  thumbnailImages={this.state.thumbnailImages}/>
                 <RightBox price={this.state.price} summary={this.state.summary} quantity={this.state.quantity}
@@ -75,4 +86,4 @@ class App extends Component {
     }
 }
 
-export default App
+export default App;

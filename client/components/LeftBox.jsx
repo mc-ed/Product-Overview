@@ -5,6 +5,8 @@ import ItemNo from './ItemNo.jsx';
 import Ratings from './Ratings.jsx';
 import Recommendations from './Recommendations.jsx'
 import QandA from './QandA.jsx';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+
 /*Nested componenets:
 Model Number
 Name
@@ -25,8 +27,9 @@ const LeftBox = (props) => {
                 <QandA />
             </div>
             <div class="row"> 
-                <Thumbnails thumbnailImages={props.thumbnailImages} />
-                <Image src={props.imagesURL}/> 
+                <Thumbnails toggle={props.toggle} thumbnailImages={props.thumbnailImages} />
+                <Image name={props.name} isOpen={props.isOpen} toggle={props.toggle} src={props.imagesURL}/>
+                 
             </div>
                
         </div>

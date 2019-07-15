@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 3000;
+const db = require('../database/index.js')
 
 app.use(express.static('./public'))
 
