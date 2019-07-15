@@ -15,7 +15,7 @@ class App extends Component {
             avgRating: 4.5,
             percentRecommended: 91,
             imagesURL: "https://binkardfecimages.s3.amazonaws.com/638991/main.jpg",
-            thumbnailImages: ["https://binkardfecimages.s3.us-east-2.amazonaws.com/638991/thumbnail1.jpg",
+            thumbnailImages: [" https://binkardfecimages.s3.amazonaws.com/638991/main.jpg", "https://binkardfecimages.s3.us-east-2.amazonaws.com/638991/thumbnail1.jpg",
                 "https://binkardfecimages.s3.us-east-2.amazonaws.com/638991/thumbnail2.jpg",
                 "https://binkardfecimages.s3.us-east-2.amazonaws.com/638991/thumbnail3.jpg",
                 "https://binkardfecimages.s3.us-east-2.amazonaws.com/638991/thumbnail4.png"],
@@ -32,7 +32,7 @@ class App extends Component {
         this.minusOne = this.minusOne.bind(this);
         this.typeQuantity = this.typeQuantity.bind(this);
         this.addToCart = this.addToCart.bind(this);
-        this.toggle = this.toggle.bind(this);
+      
     }
 
 
@@ -62,19 +62,14 @@ class App extends Component {
 
     }
 
-    toggle() {
-        
-        this.setState(prevState => ({
-          modal: !prevState.modal
-        }));
-      }
+    
     
     render() {
        
         return (
             <div class="row">
                 
-                <LeftBox toggle={this.toggle} isOpen={this.state.modal} itemNumber={this.state.itemNumber} modelNumber ={this.state.modelNumber} name={this.state.name} ratings={this.state.ratings}
+                <LeftBox itemNumber={this.state.itemNumber} modelNumber ={this.state.modelNumber} name={this.state.name} ratings={this.state.ratings}
                 avgRating={this.state.avgRating} percentRecommended={this.state.percentRecommended}
                 imagesURL={this.state.imagesURL}  thumbnailImages={this.state.thumbnailImages}/>
                 <RightBox price={this.state.price} summary={this.state.summary} quantity={this.state.quantity}
