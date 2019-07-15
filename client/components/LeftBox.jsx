@@ -28,7 +28,7 @@ const LeftBox = (props) => {
             </div>
             <div class="row"> 
                 <Thumbnails toggle={props.toggle} thumbnailImages={props.thumbnailImages} />
-                <Image name={props.name} isOpen={props.isOpen} toggle={props.toggle} src={props.imagesURL}/>
+                <Image name={props.name}  src={props.imagesURL}/>
                  
             </div>
                
