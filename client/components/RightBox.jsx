@@ -14,7 +14,7 @@ Favorite */
 
 const RightBox = (props) => {
     return (
-        <div class="col RightBox">
+        <div class="col-5 RightBox">
             <Price price={props.price}/>
             <Description summary={props.summary}/>
             <Cart quantity={props.quantity} plusOne={props.plusOne} 

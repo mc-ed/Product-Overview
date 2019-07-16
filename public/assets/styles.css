@@ -8,6 +8,9 @@
     font-family: icons
 }
 
+img.col10 {
+    padding: 0px, 0px!important;
+}
 .thumbnail {
     max-width: 60px;
     border: 1px solid #ccc;
@@ -79,6 +82,10 @@
 .QandA p {
     padding: 0px;
     margin: 0px; 
+}
+
+.image-main {
+    width: 100%;
 }
 
 /* Right Box */
@@ -189,3 +196,15 @@ input {
 .Availability {
     padding: 20px
 }
+
+/* Modal */
+
+.main-modal-image {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    backface-visibility: hidden;
+    transform-origin: 50% 50%;
+    cursor: move;
+    transition: transform 200ms ease-in-out 0s;
+
+}
+
