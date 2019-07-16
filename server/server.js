@@ -15,4 +15,10 @@ app.get('/:SS', (req, res) => {
     db.getItem(arg).then(data => res.send(data));
 })
 
+app.get('/price/:SS', (req, res) => {
+    const arg = req.params.SS;
+
+    db.getItemPrice(arg).then(data => res.json(data.price)).catch(err => console.log(err));
+})
+
 app.listen(port, () => console.log(`app listening on port ${port}!`))

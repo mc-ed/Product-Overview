@@ -80,12 +80,12 @@ class App extends Component {
        axios.get(`/${SS}`)
        .then(results => {
            const editedURLs = results.data.largeImages.filter(url => url.slice(-3) === 'jpg')
-           console.log(editedURLs);
+           
            const items = editedURLs.map((file) =>{
                
                return `https://binkardfecimages.s3.us-east-2.amazonaws.com/FECPhotos/${results.data.SS}/${file}`
             })
-            console.log(items)
+           
            this.setState({
            SS: results.data.SS,
            

@@ -1,23 +1,22 @@
-
-import React from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import Box from './Box.jsx'
+import React, {useState} from 'react'
 const Image = (props) => {  
-    // const images = props.thumbnailImages.map((url) =>
-    //     <img class="thumbnail" src={url}></img>)
- 
-    // const [thumbnails, setThumbnails] = useState(images)
+  
+    const [modal, setModal] = useState(false);
     
-    
+    const toggle = () => {
+        setModal(!modal)
+    };
 
     
     return (
 
-        <div>
-            
-                <img class="col-10" src={props.src}></img>
+        <div class='col-10'>
+         
+                <img class="image-main" onClick={toggle} src={props.src}></img>
+
+       
           
-            
         </div>
     )
     

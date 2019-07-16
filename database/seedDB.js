@@ -9,7 +9,7 @@ function readFiles(dirname, onFileContent, onError) {
         console.log('no data', err);
         return;
       }
-      console.log(filenames)
+    
       filenames.forEach(function(filename) {
         fs.readFile(dirname + '/' + filename, 'utf-8', function(err, content) {
           if (err) {

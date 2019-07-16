@@ -15,6 +15,7 @@ Main photo
 Thumbnails
 Rating */
 const LeftBox = (props) => {
+    
     const [modal, setModal] = useState(false);
     
     const toggle = () => {
@@ -23,26 +24,24 @@ const LeftBox = (props) => {
     
     return (
         
-        <div class="col">
+        <div class="col-7">
            
             <ItemNo itemNumber={props.itemNumber} modelNumber={props.modelNumber}/>
             <p class="itemName">{props.name}</p>
+            
             <div class="row">
                 <Ratings avgRating={props.avgRating} ratings={props.rating}/>
                 <Recommendations percentRecommended={props.percentRecommended}/> 
                 <QandA />
             </div>
+            
             <div class="row"> 
-            <Button color="none" onClick={toggle}>
-                <Thumbnails toggle={props.toggle} thumbnailImages={props.images.slice(1)} />
+           
+
+                <Thumbnails toggle={props.toggle} thumbnailImages={props.images.slice(1)} main={props.images[0]} />
                 <Image name={props.name}  thumbnailImages={props.images.slice(1)} src={props.images[0]}/>
-            </Button>
-                <Modal isOpen={modal} toggle={toggle}>
-                <ModalHeader toggle={toggle}>{props.name}</ModalHeader>
-                <ModalBody>
-                   <Box src={props.images[0]} thumbnails={props.images.slice(1)}/>                      
-                </ModalBody>
-            </Modal>
+           
+           
             </div>
                
         </div>
