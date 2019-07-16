@@ -34,13 +34,13 @@ const LeftBox = (props) => {
             </div>
             <div class="row"> 
             <Button color="none" onClick={toggle}>
-                <Thumbnails toggle={props.toggle} thumbnailImages={props.thumbnailImages} />
-                <Image name={props.name}  thumbnailImages={props.thumbnailImages} src={props.imagesURL}/>
+                <Thumbnails toggle={props.toggle} thumbnailImages={props.images.slice(1)} />
+                <Image name={props.name}  thumbnailImages={props.images.slice(1)} src={props.images[0]}/>
             </Button>
                 <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>{props.name}</ModalHeader>
                 <ModalBody>
-                   <Box src={props.imagesURL} thumbnails={props.thumbnailImages}/>                      
+                   <Box src={props.images[0]} thumbnails={props.images.slice(1)}/>                      
                 </ModalBody>
             </Modal>
             </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import axios from 'axios';
 import LeftBox from './LeftBox.jsx';
 import RightBox from './RightBox.jsx';
 
@@ -7,15 +8,15 @@ class App extends Component {
     constructor (props) {
         super(props);
         this.state = {
-            
+            SS: 1,
             itemNumber: 638991,
             modelNumber: 1954889,
             name: "IRWIN 16-oz Smooth Face Steel Head Fiberglass Framing Hammer",
             ratings: 37,
             avgRating: 4.5,
             percentRecommended: 91,
-            imagesURL: "https://binkardfecimages.s3.amazonaws.com/638991/main.jpg",
-            thumbnailImages: [" https://binkardfecimages.s3.amazonaws.com/638991/main.jpg", "https://binkardfecimages.s3.us-east-2.amazonaws.com/638991/thumbnail1.jpg",
+            
+            images: [" https://binkardfecimages.s3.amazonaws.com/638991/main.jpg", "https://binkardfecimages.s3.us-east-2.amazonaws.com/638991/thumbnail1.jpg",
                 "https://binkardfecimages.s3.us-east-2.amazonaws.com/638991/thumbnail2.jpg",
                 "https://binkardfecimages.s3.us-east-2.amazonaws.com/638991/thumbnail3.jpg",
                 "https://binkardfecimages.s3.us-east-2.amazonaws.com/638991/thumbnail4.png"],
@@ -24,7 +25,6 @@ class App extends Component {
             quantity: 1,
             items: [],
             total: 0,
-            modal: false
             
             } 
         
@@ -32,6 +32,7 @@ class App extends Component {
         this.minusOne = this.minusOne.bind(this);
         this.typeQuantity = this.typeQuantity.bind(this);
         this.addToCart = this.addToCart.bind(this);
+        this.getItems = this.getItems.bind(this);
       
     }
 
@@ -62,8 +63,51 @@ class App extends Component {
 
     }
 
+   componentDidMount () {
+       this.getItems();
+       window.addEventListener('product', e => {
+           const SS = e.detail.product_id;
+           this.setState({ SS }, () => {
+               this.getItems()
+            })
+       })
+   }
+
+   getItems () {
+       const SS = this.state.SS;
+
     
-    
+       axios.get(`/${SS}`)
+       .then(results => {
+           const editedURLs = results.data.largeImages.filter(url => url.slice(-3) === 'jpg')
+           console.log(editedURLs);
+           const items = editedURLs.map((file) =>{
+               
+               return `https://binkardfecimages.s3.us-east-2.amazonaws.com/FECPhotos/${results.data.SS}/${file}`
+            })
+            console.log(items)
+           this.setState({
+           SS: results.data.SS,
+           
+           itemNumber: results.data.itemNumber,
+           modelNumber: results.data.modelNumber,
+           name: results.data.name,
+           ratings: 'chris API',
+           avgRating: 'chris API',
+           percentRecommended: 'chrisAPI',
+           
+           images: items,
+           price: results.data.price,
+           summary: results.data.summary,
+            
+           quantity: 1,
+           items: [],
+           total: 0,
+
+            })
+        }).catch(err => console.log(err))
+   };
+   
     render() {
        
         return (
@@ -71,7 +115,7 @@ class App extends Component {
                 
                 <LeftBox itemNumber={this.state.itemNumber} modelNumber ={this.state.modelNumber} name={this.state.name} ratings={this.state.ratings}
                 avgRating={this.state.avgRating} percentRecommended={this.state.percentRecommended}
-                imagesURL={this.state.imagesURL}  thumbnailImages={this.state.thumbnailImages}/>
+                images={this.state.images}/>
                 <RightBox price={this.state.price} summary={this.state.summary} quantity={this.state.quantity}
                 plusOne={this.plusOne} minusOne={this.minusOne} typeQuantity={this.typeQuantity} 
                 addToCart={this.addToCart}/>

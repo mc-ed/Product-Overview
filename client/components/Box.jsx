@@ -27,9 +27,9 @@ const Box = (props) => {
                 <img ref={input => setImageTag(input)} class="col-9 main-modal-image" style={{width: 200 + "px", height: 300 +"px"}} src={mainImage}></img>
                 <div class="col-1">
 
-                    <button onClick={zoomIn}>{'\u005A'}</button>
+                    {/* <button onClick={zoomIn}>{'\u005A'}</button>
                     <button>{'\u004A'}</button>
-                    <button>{'\u002F'}</button>
+                    <button>{'\u002F'}</button> */}
                 </div>
             </div>
             

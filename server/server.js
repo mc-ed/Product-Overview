@@ -8,4 +8,11 @@ app.use(express.static('./public'))
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
+app.get('/:SS', (req, res) => {
+    
+    const arg = req.params.SS;
+
+    db.getItem(arg).then(data => res.send(data));
+})
+
 app.listen(port, () => console.log(`app listening on port ${port}!`))

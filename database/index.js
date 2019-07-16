@@ -12,6 +12,11 @@ db.once('open', function() {
   console.log('connected!');
 });
 
+const getItem = (SS) => {
+  
+  return Product.findOne({SS: {$eq: SS}})
+}
+
 const productSchema = new Schema({
   spreadsheetId: String,
   itemNumber: Number,
@@ -31,4 +36,4 @@ var Product = mongoose.model('Product', productSchema)
 
 
 
-module.exports = {db, Product}
+module.exports = {db, Product, getItem}
