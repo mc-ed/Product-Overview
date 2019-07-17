@@ -21,6 +21,10 @@ const getItemPrice = (SS) => {
   return Product.findOne({SS: {$eq: SS}})
 }
 
+const getAllPrices =() => {
+  return Product.find({}, {price: 1, SS: 1})
+}
+
 const productSchema = new Schema({
   spreadsheetId: String,
   itemNumber: Number,
@@ -40,4 +44,4 @@ var Product = mongoose.model('Product', productSchema)
 
 
 
-module.exports = {db, Product, getItem, getItemPrice}
+module.exports = {db, Product, getItem, getItemPrice, getAllPrices}

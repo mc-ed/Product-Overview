@@ -20,7 +20,7 @@ const Thumbnails = (props) => {
         <div className="tnList" onClick={toggle} className="col-2">{images}</div>
        
         <Modal isOpen={modal} toggle={toggle}>
-            <ModalHeader toggle={toggle}>test</ModalHeader>
+            <ModalHeader toggle={toggle}>{props.name}</ModalHeader>
             <ModalBody>
                <Box src={props.main} thumbnails={props.thumbnailImages}/>                      
             </ModalBody>

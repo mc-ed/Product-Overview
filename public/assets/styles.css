@@ -74,6 +74,16 @@ img.col10 {
     text-align: center;
 }
 
+.viewNow {
+    color: #0471AF!important;
+    font-weight: 700;
+    font-size: 14px
+}
+.viewNow:hover {
+   cursor: pointer;
+   color: #004990!important;
+}
+
 .qtext {
     font-size: 12px;
     color: rgb(93, 93, 93);
