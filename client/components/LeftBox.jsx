@@ -24,21 +24,21 @@ const LeftBox = (props) => {
     
     return (
         
-        <div class="col-7">
+        <div className="col-7">
            
             <ItemNo itemNumber={props.itemNumber} modelNumber={props.modelNumber}/>
-            <p class="itemName">{props.name}</p>
+            <p className="itemName">{props.name}</p>
             
-            <div class="row">
+            <div className="row">
                 <Ratings avgRating={props.avgRating} ratings={props.rating}/>
                 <Recommendations percentRecommended={props.percentRecommended}/> 
                 <QandA />
             </div>
             
-            <div class="row"> 
+            <div className="row"> 
            
 
-                <Thumbnails toggle={props.toggle} thumbnailImages={props.images.slice(1)} main={props.images[0]} />
+                <Thumbnails toggle={toggle} thumbnailImages={props.images.slice(1)} name={props.name} main={props.images[0]} />
                 <Image name={props.name}  thumbnailImages={props.images.slice(1)} src={props.images[0]}/>
            
            

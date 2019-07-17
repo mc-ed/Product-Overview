@@ -4,26 +4,27 @@ const Ratings = (props) => {
     const star = '\uECE2';
     const half = '\uECE1';
 
-    const starString;
-    const avgRating = props.avgRating;
+    let starString = '';
+    let avgRating = props.avgRating;
     
     while (avgRating > 0) {
-        if (Math.floor(avgRating) === avgRating) {
+       
+        if (avgRating >= 1) {
+            
             starString += star;
-            avgRating --;
+            avgRating--;
         } else {
             starString += half;
             avgRating = avgRating - .5;
         }    
     }
     
-    
     return (
-        <div class="col Ratings">
+        <div className="col Ratings">
         
-            <p class="ratingsLink">{props.ratings} Ratings</p>
-            <p class="icons stars">{starString}</p>
-            <p class="averageRating">{props.avgRating} Average</p>
+            <p className="ratingsLink">{props.ratings} Ratings</p>
+            <p className="icons">{starString}</p>
+            <p className="averageRating">{props.avgRating} Average</p>
 
         </div>
     )

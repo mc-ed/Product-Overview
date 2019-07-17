@@ -2,9 +2,9 @@ import React from 'react';
 
 const QandA = () => {
     return (
-        <div class="col QandA">
-            <p class="icons qanda">{'\uEAC6'}</p>
-            <p class="qtext">Community Q&A</p>
+        <div className="col QandA">
+            <p className="icons qanda">{'\uEAC6'}</p>
+            <p className="qtext">Community Q&A</p>
             {/* <href>View Now</href> */}
         </div>
     )

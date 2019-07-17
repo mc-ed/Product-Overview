@@ -25,9 +25,5 @@ app.get('/price/:SS', (req, res) => {
     db.getItemPrice(arg).then(data => res.json(data.price)).catch(err => console.log(err));
 })
 
-app.post('/cart', (req, res) => {
-    console.log(req.body)
-    res.send(req.body);
-})
 
 app.listen(port, () => console.log(`app listening on port ${port}!`))

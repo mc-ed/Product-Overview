@@ -11,9 +11,9 @@ const Image = (props) => {
     
     return (
 
-        <div class='col-10'>
+        <div className='col-10'>
          
-                <img class="image-main" onClick={toggle} src={props.src}></img>
+                <img className="image-main" onClick={toggle} src={props.src}></img>
 
        
           

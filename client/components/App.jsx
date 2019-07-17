@@ -66,14 +66,13 @@ class App extends Component {
     }
 
     cartListener (event) {
-        axios.post('/cart', {
+        window.dispatchEvent(new CustomEvent('cart', {
             name: this.state.name,
             id: this.state.SS,
             quantity: this.state.quantity,
             price: this.state.quantity
-        })
-        .then(response => console.log(response))
-        .catch(err => console.log('error updating cart'))
+        }))
+    
     }
 
     componentDidMount () {
@@ -144,7 +143,7 @@ class App extends Component {
     render() {
        
         return (
-            <div class="row">
+            <div className="row">
                 
                 <LeftBox itemNumber={this.state.itemNumber} modelNumber ={this.state.modelNumber} name={this.state.name} ratings={this.state.ratings}
                 avgRating={this.state.avgRating} percentRecommended={this.state.percentRecommended}

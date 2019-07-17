@@ -3,8 +3,8 @@ import React from 'react';
 const ItemNo = (props) => {
   
    return <div>
-      <span class="item itemNo">Item #:</span><span class="itemNo">{props.itemNumber}    </span>
-      <span class="item itemNo">     Model #:</span><span class="itemNo">{props.modelNumber}</span>
+      <span className="item itemNo">Item #:</span><span className="itemNo">{props.itemNumber}    </span>
+      <span className="item itemNo">     Model #:</span><span className="itemNo">{props.modelNumber}</span>
       </div>
 }
 

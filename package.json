@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
+    "react-dev": "webpack -d --watch",
     "watch": "webpack --watch",
     "start-server": "nodemon server/server.js",
     "restart": "pm2 startOrRestart ecosystem.config.js",
