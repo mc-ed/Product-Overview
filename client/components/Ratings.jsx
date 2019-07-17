@@ -6,7 +6,7 @@ const Ratings = (props) => {
 
     const starString;
     const avgRating = props.avgRating;
-
+    
     while (avgRating > 0) {
         if (Math.floor(avgRating) === avgRating) {
             starString += star;
@@ -16,10 +16,11 @@ const Ratings = (props) => {
             avgRating = avgRating - .5;
         }    
     }
-
+    
     
     return (
         <div class="col Ratings">
+        
             <p class="ratingsLink">{props.ratings} Ratings</p>
             <p class="icons stars">{starString}</p>
             <p class="averageRating">{props.avgRating} Average</p>
