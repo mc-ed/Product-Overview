@@ -12,8 +12,8 @@ const Box = (props) => {
     //     setImageTag(imageTag.style.width = imageTag.style.width + 100);
     //     console.log(imageTag.style.width)
     // }
-    const images = props.thumbnails.map((url) =>
-        <img class="thumbnail" onClick={props.toggle} src={url}></img>)
+    const images = props.thumbnails.map((url, index) =>
+        <img key={index} className="thumbnail" onClick={props.toggle} src={url}></img>)
     
    
     const [mainImage, setMainImage] = useState(props.src);
@@ -21,11 +21,11 @@ const Box = (props) => {
 
    
     return (
-        <div class="container">
-            <div class="row">
-                <div class="tnList" onClick={changePhoto} class="col-2">{images}</div>
-                <img ref={input => setImageTag(input)} class="col-9 main-modal-image" style={{width: 200 + "px", height: 300 +"px"}} src={mainImage}></img>
-                {/* <div class="col-1">
+        <div className="container">
+            <div className="row">
+                <div className="tnList" onClick={changePhoto} className="col-2">{images}</div>
+                <img ref={input => setImageTag(input)} className="col-9 main-modal-image" style={{width: 200 + "px", height: 300 +"px"}} src={mainImage}></img>
+                {/* <div className="col-1">
 
                     <button onClick={zoomIn}>{'\u005A'}</button>
                     <button>{'\u004A'}</button>

@@ -74,9 +74,14 @@ img.col10 {
     text-align: center;
 }
 
-.QandA.active {
+.viewNow {
+    color: #0471AF!important;
+    font-weight: 700;
+    font-size: 14px
+}
+.viewNow:hover {
    cursor: pointer;
-   color: #004990,
+   color: #004990!important;
 }
 
 .qtext {
