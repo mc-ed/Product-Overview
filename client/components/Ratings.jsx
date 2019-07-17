@@ -7,7 +7,7 @@ const Ratings = (props) => {
     let starString = '';
     let avgRating = props.avgRating;
     
-    while (avgRating > 0) {
+    while (avgRating >= .5) {
        
         if (avgRating >= 1) {
             

@@ -126,7 +126,7 @@ class App extends Component {
            percentRecommended: 'chrisAPI',
            
            images: items,
-           price: results.data.price,
+           price: results.data.price.toLocaleString("en-US", {style: "currency", currency: "USD"}).slice(1),
            summary: results.data.summary,
             
            quantity: 1,
