@@ -11,7 +11,7 @@ const QandA = () => {
             <Link
                 activeClass="active"
                 className="viewNow"
-                to="#CommunityQandA"
+                to="CommunityQandA"
                 spy={true}
                 smooth={true}
                 offset={-70}
