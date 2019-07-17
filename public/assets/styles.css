@@ -10,6 +10,9 @@
 
 .Product-Overview {
     width: 100%;
+    border-width: 1px 1px 1px 1px;
+    border-color: rgb(204, 204, 204);
+    border-style: solid;
 }
 img.col10 {
     padding: 0px, 0px!important;
@@ -107,7 +110,7 @@ img.col10 {
 /* Right Box */
 
 .RightBox {
-    border-width: 1px;
+    border-width: 1px 0px 1px 1px;
     border-color: rgb(204, 204, 204);
     border-style: solid;
 }
