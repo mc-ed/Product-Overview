@@ -105,7 +105,7 @@ class App extends Component {
        const SS = this.state.SS;
         
     
-       axios.get(`/${SS}`)
+       axios.get(`http://ec2-18-188-213-241.us-east-2.compute.amazonaws.com/${SS}`)
        .then(results => {
            
            const editedURLs = results.data.largeImages.filter(url => url.slice(-3) === 'jpg')
