@@ -9,18 +9,18 @@ const Thumbnails = (props) => {
         setModal(!modal)
     };
     
-    const images = props.thumbnailImages.map((url) =>
-        <img class="thumbnail" src={url}></img>)
+    const images = props.thumbnailImages.map((url, index) =>
+        <img key={index} className="thumbnail" src={url}></img>)
 
 
    return (
        <>
 
     
-        <div class="tnList" onClick={toggle} class="col-2">{images}</div>
+        <div className="tnList" onClick={toggle} className="col-2">{images}</div>
        
         <Modal isOpen={modal} toggle={toggle}>
-            <ModalHeader toggle={toggle}>{props.name}</ModalHeader>
+            <ModalHeader toggle={toggle}>test</ModalHeader>
             <ModalBody>
                <Box src={props.main} thumbnails={props.thumbnailImages}/>                      
             </ModalBody>

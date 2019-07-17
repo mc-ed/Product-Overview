@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Description = (props) => {
-    const list = props.summary.map((item) =>
-    <li>{item}</li>
+    const list = props.summary.map((item, index) =>
+    <li key={index}>{item}</li>
     )
- return (<ul class="Description">{list}</ul>)
+ return (<ul className="Description">{list}</ul>)
 }
 
 export default Description;

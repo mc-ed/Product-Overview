@@ -34,6 +34,7 @@ class App extends Component {
         this.addToCart = this.addToCart.bind(this);
         this.getItems = this.getItems.bind(this);
         this.getRatings = this.getRatings.bind(this);
+        this.cartListener = this.cartListener.bind(this);
       
     }
 
@@ -62,6 +63,16 @@ class App extends Component {
             items: [...prevState.items, newItems.join(',')], total: this.state.quantity * this.state.price
           }))
 
+    }
+
+    cartListener (event) {
+        window.dispatchEvent(new CustomEvent('cart', {
+            name: this.state.name,
+            id: this.state.SS,
+            quantity: this.state.quantity,
+            price: this.state.quantity
+        }))
+    
     }
 
     componentDidMount () {
@@ -132,14 +143,14 @@ class App extends Component {
     render() {
        
         return (
-            <div class="row">
+            <div className="row">
                 
                 <LeftBox itemNumber={this.state.itemNumber} modelNumber ={this.state.modelNumber} name={this.state.name} ratings={this.state.ratings}
                 avgRating={this.state.avgRating} percentRecommended={this.state.percentRecommended}
                 images={this.state.images}/>
                 <RightBox price={this.state.price} summary={this.state.summary} quantity={this.state.quantity}
                 plusOne={this.plusOne} minusOne={this.minusOne} typeQuantity={this.typeQuantity} 
-                addToCart={this.addToCart}/>
+                addToCart={this.addToCart} cartListener={this.cartListener}/>
             </div>
             
         )

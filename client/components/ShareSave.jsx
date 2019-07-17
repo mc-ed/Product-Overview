@@ -2,9 +2,9 @@ import React from 'react';
 
 const ShareSave = () => {
     return (
-        <div class="row ShareSave">
-            <button class="col"><span class="save">{'\uECEA'}</span><span class="saveshare"> SAVE</span></button>
-            <button class="col"><span class="share">{'\uEEC6'}</span><span class="saveshare"> SHARE</span></button>
+        <div className="row ShareSave">
+            <button className="col"><span className="save">{'\uECEA'}</span><span className="saveshare"> SAVE</span></button>
+            <button className="col"><span className="share">{'\uEEC6'}</span><span className="saveshare"> SHARE</span></button>
         </div>
     )
 }
