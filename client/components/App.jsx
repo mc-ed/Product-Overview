@@ -66,12 +66,12 @@ class App extends Component {
     }
 
     cartListener (event) {
-        window.dispatchEvent(new CustomEvent('cart', {
+        window.dispatchEvent(new CustomEvent('cart', {detail:{
             name: this.state.name,
             id: this.state.SS,
             quantity: this.state.quantity,
             price: this.state.quantity
-        }))
+        }}))
     
     }
 
