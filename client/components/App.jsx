@@ -66,7 +66,7 @@ class App extends Component {
         window.dispatchEvent(new CustomEvent('cart', {detail:{
             name: this.state.name,
             id: this.state.SS,
-            quantity: this.state.quantity,
+            amount: this.state.quantity,
             price: this.state.price
         }}))
     
@@ -141,15 +141,15 @@ class App extends Component {
        
         return (
             <div className="Product-Overview">
-            <div className="row">
-                
-                <LeftBox itemNumber={this.state.itemNumber} modelNumber ={this.state.modelNumber} name={this.state.name} ratings={this.state.ratings}
-                avgRating={this.state.avgRating} percentRecommended={this.state.percentRecommended}
-                images={this.state.images}/>
-                <RightBox price={this.state.price} summary={this.state.summary} quantity={this.state.quantity}
-                plusOne={this.plusOne} minusOne={this.minusOne} typeQuantity={this.typeQuantity} 
-                addToCart={this.addToCart} cartListener={this.cartListener}/>
-            </div>
+                <div className="row">
+                    
+                    <LeftBox itemNumber={this.state.itemNumber} modelNumber ={this.state.modelNumber} name={this.state.name} ratings={this.state.ratings}
+                    avgRating={this.state.avgRating} percentRecommended={this.state.percentRecommended}
+                    images={this.state.images}/>
+                    <RightBox price={this.state.price} summary={this.state.summary} quantity={this.state.quantity}
+                    plusOne={this.plusOne} minusOne={this.minusOne} typeQuantity={this.typeQuantity} 
+                    addToCart={this.addToCart} cartListener={this.cartListener}/>
+                </div>
             </div>
             
         )
