@@ -74,6 +74,11 @@ img.col10 {
     text-align: center;
 }
 
+.QandA.active {
+   cursor: pointer;
+   color: #004990,
+}
+
 .qtext {
     font-size: 12px;
     color: rgb(93, 93, 93);

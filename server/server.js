@@ -25,5 +25,8 @@ app.get('/price/:SS', (req, res) => {
     db.getItemPrice(arg).then(data => res.json(data.price)).catch(err => console.log(err));
 })
 
+app.get('/prices/all', (req, res) => {
+    db.getAllPrices().then(results => res.json(results)).catch(err => console.log(err))
+})
 
 app.listen(port, () => console.log(`app listening on port ${port}!`))
