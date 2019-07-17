@@ -140,6 +140,7 @@ class App extends Component {
     render() {
        
         return (
+            <div className="Product-Overview">
             <div className="row">
                 
                 <LeftBox itemNumber={this.state.itemNumber} modelNumber ={this.state.modelNumber} name={this.state.name} ratings={this.state.ratings}
@@ -148,6 +149,7 @@ class App extends Component {
                 <RightBox price={this.state.price} summary={this.state.summary} quantity={this.state.quantity}
                 plusOne={this.plusOne} minusOne={this.minusOne} typeQuantity={this.typeQuantity} 
                 addToCart={this.addToCart} cartListener={this.cartListener}/>
+            </div>
             </div>
             
         )
