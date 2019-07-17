@@ -33,6 +33,7 @@ class App extends Component {
         this.typeQuantity = this.typeQuantity.bind(this);
         this.addToCart = this.addToCart.bind(this);
         this.getItems = this.getItems.bind(this);
+        this.getRatings = this.getRatings.bind(this);
       
     }
 
@@ -63,22 +64,41 @@ class App extends Component {
 
     }
 
-   componentDidMount () {
+    componentDidMount () {
+        
        this.getItems();
+       this.getRatings()
        window.addEventListener('product', e => {
            const SS = e.detail.product_id;
            this.setState({ SS }, () => {
                this.getItems()
+               this.getRatings()
             })
        })
    }
 
+   getRatings () {
+      
+       axios.get(`http://ec2-18-225-6-113.us-east-2.compute.amazonaws.com/api/stats/${this.state.SS}`)
+        .then(results => 
+
+            this.setState(
+               {
+               ratings: results.data.reviewStats.reviewCount,
+                avgRating: results.data.reviewStats.averageStars,
+                percentRecommended: results.data.reviewStats.percentRecommended
+                }
+               )
+        )
+   }
+
    getItems () {
        const SS = this.state.SS;
-
+        
     
        axios.get(`/${SS}`)
        .then(results => {
+           
            const editedURLs = results.data.largeImages.filter(url => url.slice(-3) === 'jpg')
            
            const items = editedURLs.map((file) =>{
