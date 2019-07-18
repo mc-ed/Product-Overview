@@ -138,17 +138,17 @@ class App extends Component {
     render() {
        
         return (
-            // <div className="Product-Overview">
+            
                 <div className="row no-gutters">
                     
                     <LeftBox itemNumber={this.state.itemNumber} modelNumber ={this.state.modelNumber} name={this.state.name} ratings={this.state.ratings}
                     avgRating={this.state.avgRating} percentRecommended={this.state.percentRecommended}
                     images={this.state.images}/>
-                    <RightBox price={this.state.price} summary={this.state.summary} quantity={this.state.quantity}
+                    <RightBox price={this.state.price} name={this.state.name} id={this.state.SS} summary={this.state.summary} quantity={this.state.quantity}
                     plusOne={this.plusOne} minusOne={this.minusOne} typeQuantity={this.typeQuantity} 
                     addToCart={this.addToCart} cartListener={this.cartListener}/>
                 </div>
-            // </div>
+           
             
         )
     }
