@@ -4,12 +4,11 @@ import { Link, animateScroll as scroll } from "react-scroll";
 
 const QandA = () => {
 
-    const openCQAListener =() => {
+    const openCQAListener = () => {
        
-        window.addEventListener('QandA', e => {
-                e.click("#CommunityQandA")
-             })
-        };
+        document.getElementById("EvelynClickHere").click()
+             
+    };
     
 
     return (
