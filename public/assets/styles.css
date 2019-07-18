@@ -11,7 +11,7 @@
 /* LeftBox */
 
 .LeftBox {
-    padding-left: 4px;
+    padding-right: 20px;
 }
 
 img.col10 {
@@ -24,6 +24,15 @@ img.col10 {
 }
 
 .thumbnail:hover {
+    cursor: pointer;
+}
+
+.moreThumbnails {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.moreThumbnails:hover {
     cursor: pointer;
 }
 .qanda {
@@ -168,7 +177,14 @@ li {
     color: #0471AF;
     background-color: white;
     font-family: icons;
-    
+}
+
+.minusOne-gray {
+    border-color: rgb(255, 255, 255);
+    border: 1px solid rgb(204, 204, 204);
+    color: #0471AF;
+    background-color: rgb(204, 204, 204);
+    font-family: icons;
 }
 
 .plusOne {
@@ -178,6 +194,14 @@ li {
     background-color: white;
     font-family: icons;
 
+}
+
+.plusOne:hover, .minusOne:hover {
+    cursor: pointer;
+}
+
+.minusOne-gray:hover {
+    pointer-events: none;
 }
 
 /* Share and Save Buttons */
