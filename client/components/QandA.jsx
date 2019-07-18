@@ -14,7 +14,7 @@ const QandA = () => {
                 to="CommunityQandA"
                 spy={true}
                 smooth={true}
-                offset={-70}
+                
                 duration={500}
               >View Now</Link>
         </div>
