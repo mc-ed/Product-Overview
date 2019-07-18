@@ -6,11 +6,6 @@ const db = require('../database/index.js')
 const saveImage = require('../database/downloadPhotos')
 const cors = require('cors');
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(cors());
-app.use(express.static('./public'))
-
 const whiteList = ['http://fec-lowes-carousel.us-east-2.elasticbeanstalk.com', 'http://fec-proxy.us-east-1.elasticbeanstalk.com', 'http://lowesproxy-env.6tim4uzsty.us-east-2.elasticbeanstalk.com', 'http://localhost:3000']
 
 const corsOptions = {
@@ -24,6 +19,11 @@ const corsOptions = {
         }
     }
 }
+app.use(cors(corsOptions));
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.static('./public'))
+
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
