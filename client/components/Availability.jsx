@@ -2,10 +2,11 @@ import React from 'react';
 
 const Availability = () => {
     return (
-        <div className="Availability">
-        <span className="warning">{'\uED4C'}</span>
-        <span>     </span>
-        <span>Due to local prohibitions, this item is not currently sold in your area</span>
+        <div className="Availability row">
+        
+        
+        <img className="col-6" src='https://binkardfecimages.s3.us-east-2.amazonaws.com/fillerImages/Shippinganddelivery.png'></img>
+        <img className="col-6" src='https://binkardfecimages.s3.us-east-2.amazonaws.com/fillerImages/Free+Store+pickup.png'></img>
         </div>
     )
 }

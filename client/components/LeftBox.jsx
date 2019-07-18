@@ -24,7 +24,7 @@ const LeftBox = (props) => {
     
     return (
         
-        <div className="col-7">
+        <div className="col-6">
            
             <ItemNo itemNumber={props.itemNumber} modelNumber={props.modelNumber}/>
             <p className="itemName">{props.name}</p>
