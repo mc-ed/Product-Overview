@@ -157,6 +157,8 @@ li {
 .Cart input {
     text-align: center;
     border: 1px solid rgb(204, 204, 204);
+    vertical-align: middle;
+    line-height: 55px;
 }
 
 .Cart {
@@ -177,6 +179,7 @@ li {
     color: #0471AF;
     background-color: white;
     font-family: icons;
+    vertical-align: middle;
 }
 
 .minusOne-gray {
@@ -185,6 +188,7 @@ li {
     color: #0471AF;
     background-color: rgb(204, 204, 204);
     font-family: icons;
+    vertical-align: middle;
 }
 
 .plusOne {
@@ -193,6 +197,7 @@ li {
     color: #0471AF;
     background-color: white;
     font-family: icons;
+    vertical-align: middle;
 
 }
 
