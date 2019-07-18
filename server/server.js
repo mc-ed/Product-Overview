@@ -11,6 +11,20 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(cors());
 app.use(express.static('./public'))
 
+const whiteList = ['http://fec-lowes-carousel.us-east-2.elasticbeanstalk.com/', 'http://fec-proxy.us-east-1.elasticbeanstalk.com/', 'http://lowesproxy-env.6tim4uzsty.us-east-2.elasticbeanstalk.com/', 'http://localhost:3000']
+
+const corsOptions = {
+    credentials: true,
+    origin: function (origin, cb) {
+        if (whiteList.indexOf(origin !== -1 || !origin)) {
+            cb(null, true)
+        
+        } else {
+            cb(new Error('Not allowed by CORS'))
+        }
+    }
+}
+
 app.get('/', (req, res) => res.send('Hello World!'))
 
 app.get('/:SS', (req, res) => {
