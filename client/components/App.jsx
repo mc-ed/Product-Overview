@@ -67,7 +67,7 @@ class App extends Component {
             name: this.state.name,
             id: this.state.SS,
             amount: this.state.quantity,
-            price: this.state.price
+            price: Number(this.state.price)
         }}))
     
     }
