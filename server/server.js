@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(cors());
 app.use(express.static('./public'))
 
-const whiteList = ['http://fec-lowes-carousel.us-east-2.elasticbeanstalk.com/', 'http://fec-proxy.us-east-1.elasticbeanstalk.com/', 'http://lowesproxy-env.6tim4uzsty.us-east-2.elasticbeanstalk.com/', 'http://localhost:3000']
+const whiteList = ['http://fec-lowes-carousel.us-east-2.elasticbeanstalk.com', 'http://fec-proxy.us-east-1.elasticbeanstalk.com', 'http://lowesproxy-env.6tim4uzsty.us-east-2.elasticbeanstalk.com', 'http://localhost:3000']
 
 const corsOptions = {
     credentials: true,
