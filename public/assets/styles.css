@@ -8,6 +8,11 @@
     font-family: icons
 }
 
+/* LeftBox */
+
+.LeftBox {
+    padding-right: 20px;
+}
 
 img.col10 {
     padding: 0px, 0px!important;
@@ -19,6 +24,15 @@ img.col10 {
 }
 
 .thumbnail:hover {
+    cursor: pointer;
+}
+
+.moreThumbnails {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.moreThumbnails:hover {
     cursor: pointer;
 }
 .qanda {
@@ -116,7 +130,8 @@ img.col10 {
     font-size: 36px;
 }
 .Price {
-    margin-bottom: 20px;
+    margin-top: 15px;
+    margin-left: 20px;
 }
 
 .dollar {
@@ -139,13 +154,15 @@ li {
 }
 
 /* Add to Cart Section */
-input {
+.Cart input {
     text-align: center;
+    border: 1px solid rgb(204, 204, 204);
 }
 
 .Cart {
     line-height: 54px;
-    padding: 4px;
+    padding: 20px;
+    padding-bottom: 10px;
     width: 100%
 }
 
@@ -160,7 +177,14 @@ input {
     color: #0471AF;
     background-color: white;
     font-family: icons;
-    
+}
+
+.minusOne-gray {
+    border-color: rgb(255, 255, 255);
+    border: 1px solid rgb(204, 204, 204);
+    color: #0471AF;
+    background-color: rgb(204, 204, 204);
+    font-family: icons;
 }
 
 .plusOne {
@@ -172,12 +196,20 @@ input {
 
 }
 
+.plusOne:hover, .minusOne:hover {
+    cursor: pointer;
+}
+
+.minusOne-gray:hover {
+    pointer-events: none;
+}
+
 /* Share and Save Buttons */
 .ShareSave {
     line-height: 54px;
     background: rgb(255, 255, 255);
     border-bottom: 1px solid  rgb(204, 204, 204);
-    padding: 0px 4px 15px 4px;
+    padding: 0px 20px 20px 20px;
     
 }
 

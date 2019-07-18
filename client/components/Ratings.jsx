@@ -29,7 +29,7 @@ const Ratings = (props) => {
                 stringPointer++;
             }
         }
-        console.log(starString)
+        
         return starString.join('');
     }
     
