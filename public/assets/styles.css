@@ -8,6 +8,11 @@
     font-family: icons
 }
 
+/* LeftBox */
+
+.LeftBox {
+    padding-left: 4px;
+}
 
 img.col10 {
     padding: 0px, 0px!important;
@@ -140,8 +145,9 @@ li {
 }
 
 /* Add to Cart Section */
-input {
+.Cart input {
     text-align: center;
+    border: 1px solid rgb(204, 204, 204);
 }
 
 .Cart {
