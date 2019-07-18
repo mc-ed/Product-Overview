@@ -12,11 +12,7 @@ const Image = (props) => {
     return (
 
         <div className='col-10'>
-         
-                <img className="image-main" onClick={toggle} src={props.src}></img>
-
-       
-          
+            <img className="image-main" onClick={toggle} src={props.src}></img>
         </div>
     )
     

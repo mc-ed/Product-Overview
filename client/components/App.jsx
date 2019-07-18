@@ -75,7 +75,7 @@ class App extends Component {
     componentDidMount () {
         
        this.getItems();
-       this.getRatings()
+       this.getRatings();
        window.addEventListener('product', e => {
            const SS = e.detail.product_id;
            this.setState({ SS }, () => {
