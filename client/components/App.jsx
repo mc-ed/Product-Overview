@@ -67,7 +67,7 @@ class App extends Component {
             name: this.state.name,
             id: this.state.SS,
             amount: this.state.quantity,
-            price: this.state.price
+            price: Number(this.state.price)
         }}))
     
     }
@@ -140,8 +140,8 @@ class App extends Component {
     render() {
        
         return (
-            <div className="Product-Overview">
-                <div className="row">
+            // <div className="Product-Overview">
+                <div className="row no-gutters">
                     
                     <LeftBox itemNumber={this.state.itemNumber} modelNumber ={this.state.modelNumber} name={this.state.name} ratings={this.state.ratings}
                     avgRating={this.state.avgRating} percentRecommended={this.state.percentRecommended}
@@ -150,7 +150,7 @@ class App extends Component {
                     plusOne={this.plusOne} minusOne={this.minusOne} typeQuantity={this.typeQuantity} 
                     addToCart={this.addToCart} cartListener={this.cartListener}/>
                 </div>
-            </div>
+            // </div>
             
         )
     }
