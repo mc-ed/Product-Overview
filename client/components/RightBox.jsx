@@ -19,7 +19,7 @@ const RightBox = (props) => {
             <Description summary={props.summary}/>
             <Cart quantity={props.quantity} plusOne={props.plusOne} 
             minusOne={props.minusOne} typeQuantity={props.typeQuantity} addToCart={props.addToCart} cartListener={props.cartListener}/>
-            <ShareSave />
+            <ShareSave name={props.name} id={props.id} price={props.price}/>
             <Availability />
             
         </div>
