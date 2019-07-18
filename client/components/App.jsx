@@ -74,14 +74,14 @@ class App extends Component {
 
     componentDidMount () {
         
-       this.getItems();
-       this.getRatings();
-       window.addEventListener('product', e => {
-           const SS = e.detail.product_id;
-           this.setState({ SS }, () => {
-               this.getItems()
-               this.getRatings()
-            })
+        this.getRatings();
+        this.getItems();
+        window.addEventListener('product', e => {
+            const SS = e.detail.product_id;
+            this.setState({ SS }, () => {
+                this.getItems()
+                this.getRatings()
+                })
        })
    }
 
@@ -90,13 +90,11 @@ class App extends Component {
        axios.get(`http://ec2-18-225-6-113.us-east-2.compute.amazonaws.com/api/stats/${this.state.SS}`)
         .then(results => 
 
-            this.setState(
-               {
-               ratings: results.data.reviewStats.reviewCount,
+            this.setState({
+                ratings: results.data.reviewStats.reviewCount,
                 avgRating: results.data.reviewStats.averageStars,
                 percentRecommended: results.data.reviewStats.percentRecommended
-                }
-               )
+            })
         )
         .catch(err => console.log(err))
    }
@@ -121,9 +119,9 @@ class App extends Component {
            itemNumber: results.data.itemNumber,
            modelNumber: results.data.modelNumber,
            name: results.data.name,
-           ratings: 'chris API',
-           avgRating: 'chris API',
-           percentRecommended: 'chrisAPI',
+        //    ratings: 'chris API',
+        //    avgRating: 'chris API',
+        //    percentRecommended: 'chrisAPI',
            
            images: items,
            price: results.data.price.toLocaleString("en-US", {style: "currency", currency: "USD"}).slice(1),
