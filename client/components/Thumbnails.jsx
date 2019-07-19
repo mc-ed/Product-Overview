@@ -27,7 +27,7 @@ const Thumbnails = (props) => {
     }
 
 
-   return (
+   return (images.length > 0 ?
        <>
         
 
@@ -40,6 +40,18 @@ const Thumbnails = (props) => {
             </ModalBody>
         </Modal>
        </>
+       :  <>
+        
+
+       <div className="tnList" onClick={toggle} className="col-sm-0 order-2 order-sm-1">{images.slice(0, 6)} {numberMore(images)}</div>
+      
+       <Modal isOpen={modal} toggle={toggle}>
+           <ModalHeader toggle={toggle}>{props.name}</ModalHeader>
+           <ModalBody>
+              <Box src={mainImage} thumbnails={props.thumbnailImages}/>                      
+           </ModalBody>
+       </Modal>
+      </>
     )
 }
 
