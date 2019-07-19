@@ -272,6 +272,29 @@ img.col10 {
     color: darkgray;
     border-color: lightgray;
 }
+
+.socialMedia img {
+    height: 30px;
+    padding-right: 10px;
+    
+}
+
+.socialMedia p {
+    border-bottom: 1px solid rgb(204, 204, 204);
+    padding-bottom: 15px;
+}
+
+.socialMedia p:hover {
+    cursor: pointer;
+}
+
+.socialMedia a {
+    color: #0471AF;
+    font-weight: 700;
+    cursor: pointer;
+
+}
+
 .warning {
     color: yellow;
     font-family: icons;

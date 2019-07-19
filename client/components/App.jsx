@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import axios from 'axios';
 import LeftBox from './LeftBox.jsx';
 import RightBox from './RightBox.jsx';
