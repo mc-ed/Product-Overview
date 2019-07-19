@@ -11,7 +11,7 @@
 /* LeftBox */
 
 .LeftBox {
-    padding-right: 20px;
+    padding-right: 4px !important;
 }
 
 img.col10 {
@@ -146,6 +146,7 @@ img.col10 {
     border-bottom-width: 1px;
     border-bottom-style: solid;
     padding-bottom: 20px;
+    padding-right: 4px;
     width: 100%
 }
 
@@ -158,7 +159,8 @@ li {
     text-align: center;
     border: 1px solid rgb(204, 204, 204);
     vertical-align: middle;
-    line-height: 55px;
+    padding: 0;
+    line-height: 54px;
 }
 
 .Cart {
@@ -180,15 +182,20 @@ li {
     background-color: white;
     font-family: icons;
     vertical-align: middle;
+    padding: 0px;
+    text-align: center;
 }
 
 .minusOne-gray {
     border-color: rgb(255, 255, 255);
     border: 1px solid rgb(204, 204, 204);
-    color: #0471AF;
+    color: darkgray;
     background-color: rgb(204, 204, 204);
     font-family: icons;
     vertical-align: middle;
+    text-align: center;
+    padding: 0;
+    pointer-events: none;
 }
 
 .plusOne {
@@ -197,6 +204,8 @@ li {
     color: #0471AF;
     background-color: white;
     font-family: icons;
+    text-align: center;
+    padding: 0;
     vertical-align: middle;
 
 }
@@ -225,11 +234,18 @@ li {
     font-size: 14px 
 }
 
+
 .share {
     background-color: white;
     color: #0471AF;
     font-family: icons;
     font-size: 14px;  
+}
+
+.clickedHeart {
+    color: red !important;
+    background-color: lightgray;
+    pointer-events: none;
 }
 
 .saveshare {
@@ -244,6 +260,13 @@ li {
     background-color: white;
 }
 
+.clickedSave {
+    background-color:lightgray !important;
+    color: darkgray;
+    border-color: lightgray;
+    pointer-events: none;
+
+}
 .warning {
     color: yellow;
     font-family: icons;
