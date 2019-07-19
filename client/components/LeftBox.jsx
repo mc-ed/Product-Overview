@@ -29,7 +29,7 @@ const LeftBox = (props) => {
             <ItemNo itemNumber={props.itemNumber} modelNumber={props.modelNumber}/>
             <p className="itemName">{props.name}</p>
             
-            <div className="row">
+            <div className="row stats">
                 <Ratings avgRating={props.avgRating} ratings={props.rating}/>
                 <Recommendations percentRecommended={props.percentRecommended}/> 
                 <QandA />

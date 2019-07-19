@@ -9,9 +9,13 @@ const Image = (props) => {
     };
 
     
-    return (
+    return (props.thumbnailImages.length > 0 ?
 
         <div className='col-sm-10 order-sm-1'>
+            <img className="image-main" onClick={toggle} src={props.src}></img>
+        </div>
+        :
+        <div className='col-sm-12 order-sm-1'>
             <img className="image-main" onClick={toggle} src={props.src}></img>
         </div>
     )

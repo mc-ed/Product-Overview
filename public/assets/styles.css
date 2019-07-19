@@ -52,6 +52,10 @@ img.col10 {
 .itemName {
     font-size: 22px;
 }
+
+.stats {
+    padding-bottom: 20px;
+}
 .Ratings {
     text-align: center;
     text-decoration: none;
@@ -113,7 +117,7 @@ img.col10 {
 }
 
 .image-main {
-    width: 100%;
+    width: 95%;
 }
 
 /* Right Box */
