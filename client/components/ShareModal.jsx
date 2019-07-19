@@ -16,7 +16,7 @@ const ShareModal = () => {
         <p>
             <img src="https://binkardfecimages.s3.us-east-2.amazonaws.com/fillerImages/twitter+logo.png"></img>
             <span>
-                <a style={{display: "table-cell"}} href="https://twitter.com/login" target="_blank">Post it</a>
+                <a style={{display: "table-cell"}} href="https://twitter.com/login" target="_blank">Tweet it</a>
             </span>
 
         </p>
