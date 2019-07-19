@@ -38,8 +38,8 @@ const LeftBox = (props) => {
             <div className="row"> 
            
 
-                <Thumbnails toggle={toggle} thumbnailImages={props.images.slice(1)} name={props.name} main={props.images[0]} />
-                <Image name={props.name}  thumbnailImages={props.images.slice(1)} src={props.images[0]}/>
+                <Thumbnails toggle={toggle} thumbnailImages={props.images} name={props.name} main={props.images[0]} />
+                <Image name={props.name}  thumbnailImages={props.images} src={props.images[0]}/>
            
            
             </div>

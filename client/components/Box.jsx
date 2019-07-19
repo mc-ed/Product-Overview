@@ -15,25 +15,30 @@ const Box = (props) => {
     const images = props.thumbnails.map((url, index) =>
         <img key={index} className="thumbnail" onClick={props.toggle} src={url}></img>)
     
+    const firstHalfOfImages = images.slice(0, Math.ceil(images.length / 2));
+    const secondHalfOfImages = images.slice(Math.ceil(images.length / 2))
+    
    
     const [mainImage, setMainImage] = useState(props.src);
     const [imageTag, setImageTag] = useState(null);
     const zoomProps = {width: 300, zoomWidth: 250, img: mainImage}
    
-    return (
+    return (images.length > 5 ?
+        <div className="container">
+            <div className="row">
+                <div className="tnList" onClick={changePhoto} className="col-2">{firstHalfOfImages}</div>
+                <div className="tnList" onClick={changePhoto} className="col-2">{secondHalfOfImages}</div>
+                <ReactImageZoom ref={input => setImageTag(input)} className="col-10 main-modal-image" src={mainImage}{...zoomProps} />   
+            </div> 
+        </div>
+        
+        :
+
         <div className="container">
             <div className="row">
                 <div className="tnList" onClick={changePhoto} className="col-2">{images}</div>
-                {/* <img ref={input => setImageTag(input)} className="col-9 main-modal-image" style={{width: 200 + "px", height: 300 +"px"}} src={mainImage}></img> */}
-                <ReactImageZoom ref={input => setImageTag(input)} className="col-10 main-modal-image" src={mainImage}{...zoomProps} />
-                {/* <div className="col-1">
-
-                    <button onClick={zoomIn}>{'\u005A'}</button>
-                    <button>{'\u004A'}</button>
-                    <button>{'\u002F'}</button>
-                </div> */}
-            </div>
-            
+                <ReactImageZoom ref={input => setImageTag(input)} className="col-10 main-modal-image" src={mainImage}{...zoomProps} />   
+            </div> 
         </div>
     )
 }
