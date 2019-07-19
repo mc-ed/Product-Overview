@@ -1,0 +1,317 @@
+
+/* Fonts and Icons */
+@font-face {
+    font-family: icons;
+    src: url('./lowes-icons.woff');
+}
+.icons {
+    font-family: icons
+}
+
+/* LeftBox */
+
+.LeftBox {
+    padding-right: 4px !important;
+}
+
+img.col10 {
+    padding: 0px, 0px!important;
+}
+.thumbnail {
+    max-width: 60px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;  
+}
+
+.thumbnail:hover {
+    cursor: pointer;
+}
+
+.moreThumbnails {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.moreThumbnails:hover {
+    cursor: pointer;
+}
+.qanda {
+    font-size: 28px;
+    color: rgb(93, 93, 93);
+}
+
+.item {
+    font-weight: bold;
+}
+
+.itemNo {
+    color: rgb(93, 93, 93);
+    font-size: 12px;
+}
+
+.itemName {
+    font-size: 22px;
+}
+
+.stats {
+    padding-top: 4px;
+    padding-bottom: 20px;
+}
+.Ratings {
+    text-align: center;
+    text-decoration: none;
+}
+
+.Ratings p {
+    padding: 0px;
+    margin: 0px;
+}
+.averageRating {
+    font-size: 12px;
+    color: rgb(93, 93, 93);  
+}
+
+.Recommendations {
+    border-left: 1px solid #e5e5e5;
+    text-align: center;
+}
+
+.Recommendations p {
+    padding: 0px;
+    margin: 0px;
+}
+
+.recText {
+    font-size: 12px;
+    color: rgb(93, 93, 93)
+}
+
+.recNum {
+    color: rgb(93, 93, 93);
+    font-size: 28px;
+   
+}
+
+.QandA {
+    border-left: 1px solid #e5e5e5;
+    text-align: center;
+}
+
+.viewNow {
+    color: #0471AF!important;
+    font-weight: 700;
+    font-size: 14px
+}
+.viewNow:hover {
+   cursor: pointer;
+   color: #004990!important;
+}
+
+.qtext {
+    font-size: 12px;
+    color: rgb(93, 93, 93);
+}
+
+.QandA p {
+    padding: 0px;
+    margin: 0px; 
+}
+
+.image-main {
+    width: 95%;
+}
+
+/* Right Box */
+
+.RightBox {
+    border-width: 1px 1px 1px 1px;
+    border-color: rgb(204, 204, 204);
+    border-style: solid;
+    padding: 0px
+}
+
+.price {
+    font-weight: bold;
+    font-size: 36px;
+}
+.Price {
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.dollar {
+    font-size: 14.4px;
+    font-weight: bold;
+    vertical-align: super;
+}
+
+.Description {
+    font-size: 14px;
+    border-bottom-color: rgb(204, 204, 204); 
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    padding-bottom: 20px;
+    padding-right: 4px;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+.Description li {
+    line-height: 28px;
+    padding: 4px;
+}
+
+/* Add to Cart Section */
+.Cart input {
+    text-align: center;
+    border: 1px solid rgb(204, 204, 204);
+    vertical-align: middle;
+    padding: 0;
+    line-height: 54px;
+}
+
+.Cart {
+    line-height: 54px;
+    padding: 20px;
+    padding-bottom: 10px;
+    width: 100%
+}
+
+.addToCart {
+    background-color: rgb(51, 135, 0);
+    color: white
+}
+
+.minusOne  {
+    border-color: rgb(255, 255, 255);
+    border: 1px solid rgb(204, 204, 204);
+    color: #0471AF;
+    background-color: white;
+    font-family: icons;
+    vertical-align: middle;
+    padding: 0px;
+    text-align: center;
+}
+
+.minusOne-gray {
+    border-color: rgb(255, 255, 255);
+    border: 1px solid rgb(204, 204, 204);
+    color: darkgray;
+    background-color: rgb(204, 204, 204);
+    font-family: icons;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0;
+    pointer-events: none;
+}
+
+.plusOne {
+    border-color: rgb(255, 255, 255);
+    border: 1px solid rgb(204, 204, 204);
+    color: #0471AF;
+    background-color: white;
+    font-family: icons;
+    text-align: center;
+    padding: 0;
+    vertical-align: middle;
+
+}
+
+.plusOne:hover, .minusOne:hover {
+    cursor: pointer;
+}
+
+.minusOne-gray:hover {
+    pointer-events: none;
+}
+
+/* Share and Save Buttons */
+.ShareSave {
+    line-height: 54px;
+    background: rgb(255, 255, 255);
+    border-bottom: 1px solid  rgb(204, 204, 204);
+    padding: 0px 20px 20px 20px;
+    
+}
+
+.save {
+    background-color: white;
+    color: #0471AF;
+    font-family: icons;
+    font-size: 14px 
+}
+
+
+.share {
+    background-color: white;
+    color: #0471AF;
+    font-family: icons;
+    font-size: 14px;  
+}
+
+.clickedHeart {
+    color: red !important;
+    background-color: lightgray;
+    pointer-events: none;
+}
+
+.saveshare {
+    
+    color: #0471AF;
+    font-size: 14px;
+}
+
+.ShareSave button {
+    border-color: rgb(255, 255, 255);
+    border: 1px solid rgb(204, 204, 204);
+    background-color: white;
+}
+
+.clickedSave {
+    background-color:lightgray !important;
+    color: darkgray;
+    border-color: lightgray;
+}
+
+.socialMedia img {
+    height: 30px;
+    padding-right: 10px;
+    
+}
+
+.socialMedia p {
+    border-bottom: 1px solid rgb(204, 204, 204);
+    padding-bottom: 15px;
+}
+
+.socialMedia p:hover {
+    cursor: pointer;
+}
+
+.socialMedia a {
+    color: #0471AF;
+    font-weight: 700;
+    cursor: pointer;
+
+}
+
+.warning {
+    color: yellow;
+    font-family: icons;
+}
+
+.Availability {
+    padding: 20px
+}
+
+/* Modal */
+
+.main-modal-image {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    backface-visibility: hidden;
+    transform-origin: 50% 50%;
+    cursor: move;
+    transition: transform 200ms ease-in-out 0s;
+
+}
+
