@@ -6,7 +6,7 @@ const db = require('../database/index.js')
 const saveImage = require('../database/downloadPhotos')
 const cors = require('cors');
 
-const whiteList = ['http://fec-lowes-carousel.us-east-2.elasticbeanstalk.com', 'http://fec-proxy.us-east-1.elasticbeanstalk.com', 'http://lowesproxy-env.6tim4uzsty.us-east-2.elasticbeanstalk.com', 'http://localhost:3000']
+const whiteList = ['http://fec-lowes-proxy.us-east-2.elasticbeanstalk.com','http://fec-lowes-carousel.us-east-2.elasticbeanstalk.com', 'http://fec-proxy.us-east-1.elasticbeanstalk.com', 'http://lowesproxy-env.6tim4uzsty.us-east-2.elasticbeanstalk.com', 'http://localhost:3000']
 
 const corsOptions = {
     credentials: true,
