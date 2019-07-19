@@ -15,7 +15,7 @@ const ShareSave = (props) => {
     const sendSaveInfo = () => {
         console.log(!clicked)
         window.dispatchEvent(
-            new CustomEvent('favorite', {detail: {product_id: props.SS, price: props.price, name: props.name, saved: clicked}})
+            new CustomEvent('favorite', {detail: {product_id: props.id, price: props.price, name: props.name, saved: clicked}})
         )
         setClicked(!clicked);
     }
