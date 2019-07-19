@@ -12,8 +12,16 @@ const ShareSave = (props) => {
        
     };
     
+    window.addEventListener('loggedIn', (e) => {
+        setClicked(true)
+    });
+    
+    window.addEventListener('loggedOut', (e) => {
+        setClicked(false)
+    });
+
     const sendSaveInfo = () => {
-        console.log(!clicked)
+        
         window.dispatchEvent(
             new CustomEvent('favorite', {detail: {product_id: props.id, price: props.price, name: props.name, saved: clicked}})
         )
