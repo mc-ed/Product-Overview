@@ -271,8 +271,6 @@ img.col10 {
     background-color:lightgray !important;
     color: darkgray;
     border-color: lightgray;
-    pointer-events: none;
-
 }
 .warning {
     color: yellow;
