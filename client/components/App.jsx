@@ -76,7 +76,6 @@ class App extends Component {
 
     sendSaveInfo () {
         
-        
         if (this.state.clickedItems[this.state.SS]) {
             let clickedItems = this.state.clickedItems;
             clickedItems[this.state.SS] = 0;
@@ -88,11 +87,10 @@ class App extends Component {
             this.setState({clickedItems})
         }
 
-        
         window.dispatchEvent(
             new CustomEvent('favorite', {detail: {product_id: this.state.SS, price: this.state.price, name: this.state.name, saved: this.state.clickedItems[this.state.SS]}})
         )
-        //setClicked(!clicked);
+       
     }
 
     
