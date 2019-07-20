@@ -2,7 +2,7 @@ import React from 'react';
 
 const Availability = () => {
     return (
-        <div className="Availability row d-none d-md-block">
+        <div className="Availability row">
         
         
         <img className="col-md-6" src='https://binkardfecimages.s3.us-east-2.amazonaws.com/fillerImages/Shippinganddelivery.png'></img>

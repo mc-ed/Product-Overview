@@ -4,9 +4,12 @@
     font-family: icons;
     src: url('http://ec2-18-188-213-241.us-east-2.compute.amazonaws.com/assets/lowes-icons.woff');
 }
-.icons {
-    font-family: icons
-}
+
+@media only screen and (max-width: 767px) {
+    .Availability {
+      display: none;
+    }
+  }
 
 /* LeftBox */
 
