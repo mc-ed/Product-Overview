@@ -97,6 +97,27 @@ class App extends Component {
                 this.getRatings()
                 })
        })
+       window.addEventListener('loggedIn', (e) => {
+        const clickedItems = e.detail.favoriteList;
+        
+        //if the id of the item is in the userFavorites
+        if (clickedItems.includes(this.state.SS)) {
+            this.setState({clickedItems})
+           
+            setClicked(true)
+        }
+            //keep the button as if it were clicked once
+        if (!this.state.clickedItems[props.SS]) {
+            this.setStated({clickedItems})
+            setClicked(true)
+        }
+        });
+    
+        window.addEventListener('loggedOut', (e) => {
+            const clickedItems = e.detail.favoriteList;
+
+            this.setState({ clickedItems })
+        });
    };
 
    getRatings () {

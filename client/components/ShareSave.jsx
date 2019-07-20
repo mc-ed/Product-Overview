@@ -12,26 +12,6 @@ const ShareSave = (props) => {
        
     };
     
-    window.addEventListener('loggedIn', (e) => {
-        const userFavorites = e.detail.favoriteList;
-        //if the id of the item is in the userFavorites
-        if (userFavorites.includes(props.id)) {
-            props.clickedItems[props.id] = props.id;
-            setClicked(true)
-        }
-            //keep the button as if it were clicked once
-        if (!props.clickedItems[props.id]) {
-            props.clickedItems[props.id] = props.id;
-            setClicked(true)
-        }
-    });
-    
-    window.addEventListener('loggedOut', (e) => {
-        if (props.clickedItems[props.id] === 0) {
-            setClicked(false)
-        }
-    });
-
     const sendSaveInfo = () => {
         if (props.clickedItems[props.id]) {
             props.clickedItems[props.id] = 0;
@@ -45,6 +25,7 @@ const ShareSave = (props) => {
         )
         setClicked(!clicked);
     }
+    
     return (props.clickedItems[props.id] ?
         <>
         <div className="row ShareSave no-gutters">
