@@ -75,11 +75,13 @@ class App extends Component {
     componentDidUpdate(prevProps) {
 
         window.addEventListener('stars', (e) => {
-            console.log(e.detail)
-                // const avgRating = e.detail.//avgRating;
-                // const ratings = e.detail.//ratings
-                // const percentRecommended = e.detail.//percent
-                // this.setState({avgRating, ratings, percentRecommended})
+            const SS = e.detail.id
+                
+                this.setState({SS}, () => {
+                    this.getRatings();
+                    this.getItems();
+                })
+                console.log('test eventListener in P-O App')
         
         })
     }
