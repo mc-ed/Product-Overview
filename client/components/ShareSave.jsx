@@ -13,7 +13,13 @@ const ShareSave = (props) => {
     };
     
     window.addEventListener('loggedIn', (e) => {
-        console.log('set to true')
+        const userFavorites = e.detail.favoriteList;
+        //if the id of the item is in the userFavorites
+        if (userFavorites.includes(props.id)) {
+            props.clickedItems[props.id] = props.id;
+            setClicked(true)
+        }
+            //keep the button as if it were clicked once
         if (!props.clickedItems[props.id]) {
             props.clickedItems[props.id] = props.id;
             setClicked(true)

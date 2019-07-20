@@ -33,21 +33,20 @@ class App extends Component {
         this.getRatings = this.getRatings.bind(this);
         this.cartListener = this.cartListener.bind(this);
       
-    }
-
+    };
 
     plusOne(event) {
         this.setState({quantity: this.state.quantity + 1})
-    }
+    };
 
     minusOne(event) {
         this.setState({quantity: this.state.quantity - 1})
-    }
+    };
 
     typeQuantity (event) {
         let input = event.target.value
         this.setState({quantity: input})
-    }
+    };
 
     addToCart (input) {
         let newItems = [];
@@ -56,11 +55,13 @@ class App extends Component {
             newItems.push(this.state.name);
             count--;
         }
-        this.setState(prevState => ({
+        this.setState(prevState => (
+            {
             items: [...prevState.items, newItems.join(',')], total: this.state.quantity * this.state.price
-          }))
+            }
+        ))
 
-    }
+    };
 
     cartListener (event) {
         window.dispatchEvent(new CustomEvent('cart', {detail:{
@@ -77,14 +78,13 @@ class App extends Component {
         window.addEventListener('stars', (e) => {
             const SS = e.detail.id
                 
-                this.setState({SS}, () => {
-                    this.getRatings();
-                    this.getItems();
-                })
+            this.setState({SS}, () => {
+                this.getRatings();
+                this.getItems();
+            })
                 
-        
         })
-    }
+    };
 
     componentDidMount () {
         
@@ -97,7 +97,7 @@ class App extends Component {
                 this.getRatings()
                 })
        })
-   }
+   };
 
    getRatings () {
       
@@ -111,40 +111,33 @@ class App extends Component {
             })
         )
         .catch(err => console.log(err))
-   }
+   };
 
    getItems () {
        const SS = this.state.SS;
         
-    
        axios.get(`http://ec2-18-188-213-241.us-east-2.compute.amazonaws.com/${SS}`)
        .then(results => {
-           
-           const editedURLs = results.data.largeImages.filter(url => url.slice(-3) === 'jpg')
-           
-           const items = editedURLs.map((file) =>{
+            const editedURLs = results.data.largeImages.filter(url => url.slice(-3) === 'jpg')
+            const items = editedURLs.map((file) =>{
                
                return `https://binkardfecimages.s3.us-east-2.amazonaws.com/FECPhotos/${results.data.SS}/${file}`
             })
            
-           this.setState({
-           SS: results.data.SS,
-           
-           itemNumber: results.data.itemNumber,
-           modelNumber: results.data.modelNumber,
-           name: results.data.name,
-        //    ratings: 'chris API',
-        //    avgRating: 'chris API',
-        //    percentRecommended: 'chrisAPI',
-           
-           images: items,
-           price: results.data.price.toLocaleString("en-US", {style: "currency", currency: "USD"}).slice(1),
-           summary: results.data.summary,
-            
-           quantity: 1,
-           items: [],
-           total: 0,
-
+            this.setState({
+                SS: results.data.SS,
+                itemNumber: results.data.itemNumber,
+                modelNumber: results.data.modelNumber,
+                name: results.data.name,
+                //    ratings: 'chris API',
+                //    avgRating: 'chris API',
+                //    percentRecommended: 'chrisAPI',
+                images: items,
+                price: results.data.price.toLocaleString("en-US", {style: "currency", currency: "USD"}).slice(1),
+                summary: results.data.summary,
+                quantity: 1,
+                items: [],
+                total: 0
             })
         }).catch(err => console.log(err))
    };
@@ -153,19 +146,18 @@ class App extends Component {
        
         return (
             
-                <div className="row no-gutters">
-                    
-                    <LeftBox itemNumber={this.state.itemNumber} modelNumber ={this.state.modelNumber} name={this.state.name} ratings={this.state.ratings}
-                    avgRating={this.state.avgRating} percentRecommended={this.state.percentRecommended}
-                    images={this.state.images}/>
-                    <RightBox price={this.state.price} clickedItems={this.state.clickedItems} name={this.state.name} id={this.state.SS} summary={this.state.summary} quantity={this.state.quantity}
-                    plusOne={this.plusOne} minusOne={this.minusOne} typeQuantity={this.typeQuantity} 
-                    addToCart={this.addToCart} cartListener={this.cartListener}/>
-                </div>
-           
+            <div className="row no-gutters">
+                
+                <LeftBox itemNumber={this.state.itemNumber} modelNumber ={this.state.modelNumber} name={this.state.name} ratings={this.state.ratings}
+                avgRating={this.state.avgRating} percentRecommended={this.state.percentRecommended}
+                images={this.state.images}/>
+                <RightBox price={this.state.price} clickedItems={this.state.clickedItems} name={this.state.name} id={this.state.SS} summary={this.state.summary} quantity={this.state.quantity}
+                plusOne={this.plusOne} minusOne={this.minusOne} typeQuantity={this.typeQuantity} 
+                addToCart={this.addToCart} cartListener={this.cartListener}/>
+            </div>
             
         )
-    }
-}
+    };
+};
 
 export default App;
