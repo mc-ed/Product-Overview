@@ -76,10 +76,16 @@ class App extends Component {
 
     sendSaveInfo () {
             console.log('hghgvhg')
-        if (this.state.clickedItems[this.state.SS] !== 0) {
-            this.state.clickedItems[this.state.SS] = 0;
+        
+        if (this.state.clickedItems[this.state.SS]) {
+            let clickedItems = this.state.clickedItems;
+            clickedItems[this.state.SS] = 0;
+            this.setState({clickedItems})
+           
         } else {
-            this.state.clickedItems[this.state.SS] = this.state.SS;
+            let clickedItems = this.state.clickedItems;
+            clickedItems[this.state.SS] = this.state.SS;
+            this.setState({clickedItems})
         }
 
         
@@ -89,23 +95,9 @@ class App extends Component {
         //setClicked(!clicked);
     }
 
-    componentDidUpdate(prevProps) {
-
-        window.addEventListener('stars', (e) => {
-            const SS = e.detail.id
-                
-            this.setState({SS}, () => {
-                this.getRatings();
-                this.getItems();
-            })
-                
-        })
-    };
-
+    
     componentDidMount () {
         
-        // this.getRatings();
-        // this.getItems();
         window.addEventListener('product', e => {
             const SS = e.detail.product_id;
             this.setState({ SS }, () => {
@@ -113,6 +105,15 @@ class App extends Component {
                 this.getItems()
                 })
        })
+        
+        window.addEventListener('stars', (e) => {
+            const SS = e.detail.id
+                
+            this.setState({SS}, () => {
+                this.getRatings();
+                this.getItems();
+            })     
+        })
        window.addEventListener('loggedIn', (e) => {
         const clickedItems = e.detail.favoriteList;
         
@@ -120,7 +121,7 @@ class App extends Component {
         if (clickedItems.includes(this.state.SS)) {
             this.setState({clickedItems})
         }
-        
+
             //keep the button as if it were clicked once
         if (!this.state.clickedItems[this.state.SS]) {
             this.setState({clickedItems})
@@ -173,7 +174,8 @@ class App extends Component {
                 summary: results.data.summary,
                 quantity: 1,
                 items: [],
-                total: 0
+                total: 0,
+               
             })
         }).catch(err => console.log(err))
    };
