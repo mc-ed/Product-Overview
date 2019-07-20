@@ -72,6 +72,16 @@ class App extends Component {
     
     }
 
+    RatingsUpdate () {
+        window.addEventListener('', (e) => {
+            console.log(e.detail)
+            // const avgRating = e.detail.//avgRating;
+            // const ratings = e.detail.//ratings
+            // const percentRecommended = e.detail.//percent
+            // this.setState({avgRating, ratings, percentRecommended})
+    })
+}
+
     componentDidMount () {
         
         this.getRatings();
