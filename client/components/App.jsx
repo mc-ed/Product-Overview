@@ -70,17 +70,19 @@ class App extends Component {
             price: Number(this.state.price.replace(/[^0-9.-]+/g, ''))
         }}))
     
-    }
+    };
 
-    RatingsUpdate () {
+    componentDidUpdate(prevProps) {
+
         window.addEventListener('stars', (e) => {
             console.log(e.detail)
-            // const avgRating = e.detail.//avgRating;
-            // const ratings = e.detail.//ratings
-            // const percentRecommended = e.detail.//percent
-            // this.setState({avgRating, ratings, percentRecommended})
-    })
-}
+                // const avgRating = e.detail.//avgRating;
+                // const ratings = e.detail.//ratings
+                // const percentRecommended = e.detail.//percent
+                // this.setState({avgRating, ratings, percentRecommended})
+        
+        })
+    }
 
     componentDidMount () {
         
