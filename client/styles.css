@@ -2,7 +2,7 @@
 /* Fonts and Icons */
 @font-face {
     font-family: icons;
-    src: url('http://ec2-18-188-213-241.us-east-2.compute.amazonaws.com/lowes-icons.woff');
+    src: url('http://ec2-18-188-213-241.us-east-2.compute.amazonaws.com/assets/lowes-icons.woff');
 }
 .icons {
     font-family: icons

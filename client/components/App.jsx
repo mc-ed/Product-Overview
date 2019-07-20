@@ -104,13 +104,13 @@ class App extends Component {
 
     componentDidMount () {
         
-        //this.getRatings();
-        //this.getItems();
+        // this.getRatings();
+        // this.getItems();
         window.addEventListener('product', e => {
             const SS = e.detail.product_id;
             this.setState({ SS }, () => {
-                this.getItems()
                 this.getRatings()
+                this.getItems()
                 })
        })
        window.addEventListener('loggedIn', (e) => {
@@ -120,6 +120,7 @@ class App extends Component {
         if (clickedItems.includes(this.state.SS)) {
             this.setState({clickedItems})
         }
+        
             //keep the button as if it were clicked once
         if (!this.state.clickedItems[this.state.SS]) {
             this.setState({clickedItems})
