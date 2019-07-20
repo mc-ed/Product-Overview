@@ -81,7 +81,7 @@ class App extends Component {
                     this.getRatings();
                     this.getItems();
                 })
-                console.log('test eventListener in P-O App')
+                
         
         })
     }
