@@ -106,7 +106,7 @@ class App extends Component {
         }
             //keep the button as if it were clicked once
         if (!this.state.clickedItems[this.state.SS]) {
-            this.setStated({clickedItems})
+            this.setState({clickedItems})
             
         }
         });
