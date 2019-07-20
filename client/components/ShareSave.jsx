@@ -13,21 +13,33 @@ const ShareSave = (props) => {
     };
     
     window.addEventListener('loggedIn', (e) => {
-        setClicked(true)
+        console.log('set to true')
+        if (!props.clickedItems[props.id]) {
+            props.clickedItems[props.id] = props.id;
+            setClicked(true)
+        }
     });
     
     window.addEventListener('loggedOut', (e) => {
-        setClicked(false)
+        if (props.clickedItems[props.id] === 0) {
+            setClicked(false)
+        }
     });
 
     const sendSaveInfo = () => {
+        if (props.clickedItems[props.id]) {
+            props.clickedItems[props.id] = 0;
+        } else {
+            props.clickedItems[props.id] = props.id;
+        }
+
         
         window.dispatchEvent(
-            new CustomEvent('favorite', {detail: {product_id: props.id, price: props.price, name: props.name, saved: clicked}})
+            new CustomEvent('favorite', {detail: {product_id: props.id, price: props.price, name: props.name, isItClicked: props.clickedItems[props.id]}})
         )
         setClicked(!clicked);
     }
-    return (clicked ?
+    return (props.clickedItems[props.id] ?
         <>
         <div className="row ShareSave no-gutters">
             <button onClick={sendSaveInfo} className="col clickedSave"><span className="save clickedHeart">{'\uECE9'}</span><span className="saveshare clickedSave"> SAVE</span></button>

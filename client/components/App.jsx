@@ -22,7 +22,7 @@ class App extends Component {
             quantity: 1,
             items: [],
             total: 0,
-            
+            clickedItems: new Array(100).fill(0)
             } 
         
         this.plusOne = this.plusOne.bind(this);
@@ -144,7 +144,7 @@ class App extends Component {
                     <LeftBox itemNumber={this.state.itemNumber} modelNumber ={this.state.modelNumber} name={this.state.name} ratings={this.state.ratings}
                     avgRating={this.state.avgRating} percentRecommended={this.state.percentRecommended}
                     images={this.state.images}/>
-                    <RightBox price={this.state.price} name={this.state.name} id={this.state.SS} summary={this.state.summary} quantity={this.state.quantity}
+                    <RightBox price={this.state.price} clickedItems={this.state.clickedItems} name={this.state.name} id={this.state.SS} summary={this.state.summary} quantity={this.state.quantity}
                     plusOne={this.plusOne} minusOne={this.minusOne} typeQuantity={this.typeQuantity} 
                     addToCart={this.addToCart} cartListener={this.cartListener}/>
                 </div>
