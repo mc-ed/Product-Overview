@@ -4,7 +4,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import ShareModal from './ShareModal.jsx'
 
 const ShareSave = (props) => {
-    const [clicked, setClicked] = useState(false);
+   //const [clicked, setClicked] = useState(false);
     const [modal, setModal] = useState(false);
 
     const toggle = () => {
@@ -23,9 +23,9 @@ const ShareSave = (props) => {
         window.dispatchEvent(
             new CustomEvent('favorite', {detail: {product_id: props.id, price: props.price, name: props.name, saved: props.clickedItems[props.id]}})
         )
-        setClicked(!clicked);
+        //setClicked(!clicked);
     }
-    
+
     return (props.clickedItems[props.id] ?
         <>
         <div className="row ShareSave no-gutters">
