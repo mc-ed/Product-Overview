@@ -73,7 +73,7 @@ class App extends Component {
     }
 
     RatingsUpdate () {
-        window.addEventListener('', (e) => {
+        window.addEventListener('stars', (e) => {
             console.log(e.detail)
             // const avgRating = e.detail.//avgRating;
             // const ratings = e.detail.//ratings
