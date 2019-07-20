@@ -75,7 +75,7 @@ class App extends Component {
     };
 
     sendSaveInfo () {
-            console.log('hghgvhg')
+        
         
         if (this.state.clickedItems[this.state.SS]) {
             let clickedItems = this.state.clickedItems;
