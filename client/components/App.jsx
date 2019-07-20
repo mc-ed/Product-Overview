@@ -8,18 +8,18 @@ class App extends Component {
     constructor (props) {
         super(props);
         this.state = {
-            SS: 1,
+            SS: 0,
             itemNumber: 0,
             modelNumber: "",
             name: "",
-            ratings: 37,
-            avgRating: 4.5,
-            percentRecommended: 91,
+            ratings: 0,
+            avgRating: 0,
+            percentRecommended: 0,
             
             images: [],
             price: 0,
             summary: [],
-            quantity: 1,
+            quantity: 0,
             items: [],
             total: 0,
             clickedItems: new Array(100).fill(0)
@@ -88,8 +88,8 @@ class App extends Component {
 
     componentDidMount () {
         
-        this.getRatings();
-        this.getItems();
+        //this.getRatings();
+        //this.getItems();
         window.addEventListener('product', e => {
             const SS = e.detail.product_id;
             this.setState({ SS }, () => {
@@ -105,7 +105,7 @@ class App extends Component {
             this.setState({clickedItems})
         }
             //keep the button as if it were clicked once
-        if (!this.state.clickedItems[props.SS]) {
+        if (!this.state.clickedItems[this.state.SS]) {
             this.setStated({clickedItems})
             
         }
