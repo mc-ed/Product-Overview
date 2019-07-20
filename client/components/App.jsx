@@ -112,7 +112,7 @@ class App extends Component {
         });
     
         window.addEventListener('loggedOut', (e) => {
-            const clickedItems = e.detail.favoriteList;
+            const clickedItems = new Array(100).fill(0);
 
             this.setState({ clickedItems })
         });
