@@ -23,7 +23,7 @@ const ShareSave = (props) => {
         </ModalBody>
         </Modal>
         
-        {props.clickedItems[props.id] && props.loggedIn ?
+        {props.clickedItems[props.id] ?
         (<>
         <div className="row ShareSave no-gutters">
             <button onClick={props.sendSaveInfo} className="col clickedSave"><span className="save clickedHeart">{'\uECE9'}</span><span className="saveshare clickedSave"> SAVE</span></button>

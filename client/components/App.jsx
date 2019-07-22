@@ -116,7 +116,7 @@ class App extends Component {
        window.addEventListener('loggedIn', (e) => {
         const clickedItems = e.detail.favoriteList;
         const loggedIn = e.detail.loggedIn
-        console.log(e.detail)
+        
         //if the id of the item is in the userFavorites
         if (clickedItems.includes(this.state.SS)) {
             this.setState({clickedItems, loggedIn})
@@ -130,6 +130,7 @@ class App extends Component {
         });
     
         window.addEventListener('loggedOut', (e) => {
+            console.log(e.detail)
             const clickedItems = new Array(100).fill(0);
             const loggedIn = e.detail.loggedIn
 
