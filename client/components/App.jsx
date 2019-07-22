@@ -131,8 +131,9 @@ class App extends Component {
     
         window.addEventListener('loggedOut', (e) => {
             const clickedItems = new Array(100).fill(0);
+            const loggedIn = e.detail.loggedIn
 
-            this.setState({ clickedItems })
+            this.setState({ clickedItems, loggedIn })
         });
    };
 
