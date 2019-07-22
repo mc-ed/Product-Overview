@@ -22,7 +22,8 @@ class App extends Component {
             quantity: 0,
             items: [],
             total: 0,
-            clickedItems: new Array(100).fill(0)
+            clickedItems: new Array(100).fill(0),
+            loggedIn: false
             } 
         
         this.plusOne = this.plusOne.bind(this);
@@ -114,15 +115,16 @@ class App extends Component {
         })
        window.addEventListener('loggedIn', (e) => {
         const clickedItems = e.detail.favoriteList;
-        
+        const loggedIn = e.detail.loggedIn
+        console.log(e.detail)
         //if the id of the item is in the userFavorites
         if (clickedItems.includes(this.state.SS)) {
-            this.setState({clickedItems})
+            this.setState({clickedItems, loggedIn})
         }
 
             //keep the button as if it were clicked once
         if (!this.state.clickedItems[this.state.SS]) {
-            this.setState({clickedItems})
+            this.setState({clickedItems, loggedIn})
             
         }
         });
@@ -187,7 +189,7 @@ class App extends Component {
                 <LeftBox itemNumber={this.state.itemNumber} modelNumber ={this.state.modelNumber} name={this.state.name} ratings={this.state.ratings}
                 avgRating={this.state.avgRating} percentRecommended={this.state.percentRecommended}
                 images={this.state.images}/>
-                <RightBox price={this.state.price} sendSaveInfo={this.sendSaveInfo} clickedItems={this.state.clickedItems} name={this.state.name} id={this.state.SS} summary={this.state.summary} quantity={this.state.quantity}
+                <RightBox loggedIn={this.state.loggedIn} price={this.state.price} sendSaveInfo={this.sendSaveInfo} clickedItems={this.state.clickedItems} name={this.state.name} id={this.state.SS} summary={this.state.summary} quantity={this.state.quantity}
                 plusOne={this.plusOne} minusOne={this.minusOne} typeQuantity={this.typeQuantity} 
                 addToCart={this.addToCart} cartListener={this.cartListener}/>
             </div>
