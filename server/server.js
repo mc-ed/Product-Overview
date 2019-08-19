@@ -6,14 +6,14 @@ const db = require('../database/index.js')
 const saveImage = require('../database/downloadPhotos')
 const cors = require('cors');
 
-const whiteList = ['http://fec-lowes-proxy.us-east-2.elasticbeanstalk.com','http://fec-lowes-carousel.us-east-2.elasticbeanstalk.com', 'http://fec-proxy.us-east-1.elasticbeanstalk.com', 'http://lowesproxy-env.6tim4uzsty.us-east-2.elasticbeanstalk.com', 'http://localhost:3000']
+const whiteList = ['http://fec-lowes-proxy.us-east-2.elasticbeanstalk.com','http://fec-lowes-carousel.us-east-2.elasticbeanstalk.com', 'http://fec-proxy.us-east-1.elasticbeanstalk.com', 'http://lowesproxy-env.6tim4uzsty.us-east-2.elasticbeanstalk.com', "ec2-18-223-44-5.us-east-2.compute.amazonaws.com",'http://localhost:3000']
 
 const corsOptions = {
     credentials: true,
     origin: function (origin, cb) {
         if (whiteList.indexOf(origin !== -1 || !origin)) {
             cb(null, true)
-        
+
         } else {
             cb(new Error('Not allowed by CORS'))
         }
@@ -28,7 +28,7 @@ app.use(express.static('./public'))
 app.get('/', (req, res) => res.send('Hello World!'))
 
 app.get('/:SS', (req, res) => {
-    
+
     const arg = req.params.SS;
 
     db.getItem(arg).then(data => res.send(data));
