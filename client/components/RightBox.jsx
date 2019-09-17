@@ -17,11 +17,13 @@ const RightBox = (props) => {
         <div className="col-6 RightBox columnAdjust">
             <Price price={props.price}/>
             <Description summary={props.summary}/>
-            <Cart quantity={props.quantity} plusOne={props.plusOne} 
-            minusOne={props.minusOne} typeQuantity={props.typeQuantity} addToCart={props.addToCart} cartListener={props.cartListener}/>
-            <ShareSave loggedIn={props.loggedIn} sendSaveInfo={props.sendSaveInfo} clickedItems={props.clickedItems} name={props.name} id={props.id} price={props.price}/>
+            <Cart quantity={props.quantity} plusOne={props.plusOne} minusOne={props.minusOne} typeQuantity={props.typeQuantity}
+                addToCart={props.addToCart} cartListener={props.cartListener}
+            />
+            <ShareSave loggedIn={props.loggedIn} sendSaveInfo={props.sendSaveInfo} clickedItems={props.clickedItems} name={props.name}
+                id={props.id} price={props.price}
+            />
             <Availability />
-            
         </div>
     )
 };

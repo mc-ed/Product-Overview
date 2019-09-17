@@ -9,7 +9,7 @@ function readFiles(dirname, onFileContent, onError) {
         console.log('no data', err);
         return;
       }
-    
+
       filenames.forEach(function(filename) {
         fs.readFile(dirname + '/' + filename, 'utf-8', function(err, content) {
           if (err) {
@@ -24,20 +24,14 @@ function readFiles(dirname, onFileContent, onError) {
                 } else {
                   console.log('saved');
                 }
-      
-               
               });
-  
-  
             }
           // onFileContent(filename, content);
           // console.log(JSON.parse(content))
-          
           }
         });
       });
     });
   }
-  
+
   // const pleaseWork = readFiles('../ProductJSONFiles');
-  

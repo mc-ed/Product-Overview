@@ -4,17 +4,19 @@
         console.error("Console.save: No data");
         return;
       }
-   
-      if (!filename) filename = "console.json";
-   
+
+      if (!filename) {
+        filename = "console.json";
+      }
+
       if (typeof data === "object") {
         data = JSON.stringify(data, undefined, 4);
       }
-   
+
       var blob = new Blob([data], { type: "text/json" }),
         e = document.createEvent("MouseEvents"),
         a = document.createElement("a");
-   
+
       a.download = filename;
       a.href = window.URL.createObjectURL(blob);
       a.dataset.downloadurl = ["text/json", a.download, a.href].join(":");
@@ -48,11 +50,17 @@
     obj.smallImages = [];
     obj.largeImages = [];
     obj.summary = [];
-    
-    $($('.slick-track')[0]).find('img').each((i,img) => {obj.smallImages.push(img.attributes['data-src'].value.split('/').slice(-1).join())})
-    $($('.slick-track')[0]).find('img').each((i,img) => {obj.largeImages.push(img.attributes['data-largeurl'].value.split('/').slice(-1).join())})
-    $($('.pd-short-desc-listing')[0]).find('li').each((i, li) => {obj.summary.push(li.innerText)})
-    
+
+    $($('.slick-track')[0]).find('img').each((i,img) => {
+      obj.smallImages.push(img.attributes['data-src'].value.split('/').slice(-1).join())
+    })
+    $($('.slick-track')[0]).find('img').each((i,img) => {
+      obj.largeImages.push(img.attributes['data-largeurl'].value.split('/').slice(-1).join())
+    })
+    $($('.pd-short-desc-listing')[0]).find('li').each((i, li) => {
+      obj.summary.push(li.innerText)
+    })
+
     return obj;
 }
 

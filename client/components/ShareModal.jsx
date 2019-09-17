@@ -5,14 +5,15 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 const ShareModal = () => {
 
     return (
-    
+
     <div className="socialMedia">
         <p>
-            <img src="https://binkardfecimages.s3.us-east-2.amazonaws.com/fillerImages/facebook+logo.png"></img><span>
+            <img src="https://binkardfecimages.s3.us-east-2.amazonaws.com/fillerImages/facebook+logo.png"></img>
+            <span>
                 <a style={{display: "table-cell"}} href="https://facebook.com/login" target="_blank">Post it</a>
-                </span>
+            </span>
         </p>
-        
+
         <p>
             <img src="https://binkardfecimages.s3.us-east-2.amazonaws.com/fillerImages/twitter+logo.png"></img>
             <span>
@@ -31,4 +32,4 @@ const ShareModal = () => {
     )
 }
 
-export default ShareModal; 
+export default ShareModal;

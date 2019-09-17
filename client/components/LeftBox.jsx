@@ -15,35 +15,30 @@ Main photo
 Thumbnails
 Rating */
 const LeftBox = (props) => {
-    
     const [modal, setModal] = useState(false);
-    
     const toggle = () => {
         setModal(!modal)
     };
-    
+
     return (
-        
+
         <div className="col-6 LeftBox">
-           
+
             <ItemNo itemNumber={props.itemNumber} modelNumber={props.modelNumber}/>
+
             <p className="itemName">{props.name}</p>
-            
+
             <div className="row stats">
                 <Ratings avgRating={props.avgRating} ratings={props.rating}/>
-                <Recommendations percentRecommended={props.percentRecommended}/> 
+                <Recommendations percentRecommended={props.percentRecommended}/>
                 <QandA />
             </div>
-            
-            <div className="row"> 
-           
 
+            <div className="row">
                 <Thumbnails toggle={toggle} thumbnailImages={props.images} name={props.name} main={props.images[0]} />
                 <Image name={props.name}  thumbnailImages={props.images} src={props.images[0]}/>
-           
-           
             </div>
-               
+
         </div>
     )
 };

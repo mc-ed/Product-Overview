@@ -13,12 +13,9 @@ const Cart = (props) => {
                 <span className="cartButton col-sm-6">
                     <button className="col-12 addToCart" onClick={props.cartListener}>ADD TO CART</button>
                 </span>
-       
             </div>
-
         )
-    }
-    
+    };
     return (
         <div className="row no-gutters Cart">
             <span className="quantity col-sm-6">
@@ -29,10 +26,9 @@ const Cart = (props) => {
             <span className="cartButton col-sm-6">
                 <button className="col-12 addToCart" onClick={props.cartListener}>ADD TO CART</button>
             </span>
-        
         </div>
     )
 
 }
 
-export default Cart; 
+export default Cart;

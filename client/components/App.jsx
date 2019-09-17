@@ -76,7 +76,6 @@ class App extends Component {
     };
 
     sendSaveInfo () {
-
         if (this.state.clickedItems[this.state.SS]) {
             let clickedItems = this.state.clickedItems;
             clickedItems[this.state.SS] = 0;
@@ -94,41 +93,36 @@ class App extends Component {
 
     }
 
-
     componentDidMount () {
-
         window.addEventListener('product', e => {
             const SS = e.detail.product_id;
             this.setState({ SS }, () => {
                 this.getRatings()
                 this.getItems()
                 })
-       })
-
+        });
         window.addEventListener('stars', (e) => {
             const SS = e.detail.id
-
             this.setState({SS}, () => {
                 this.getRatings();
                 this.getItems();
             })
-        })
-       window.addEventListener('loggedIn', (e) => {
-        const clickedItems = e.detail.favoriteList;
-        const loggedIn = e.detail.loggedIn
-
-        //if the id of the item is in the userFavorites
-        if (clickedItems.includes(this.state.SS)) {
-            this.setState({clickedItems, loggedIn})
-        }
-
-            //keep the button as if it were clicked once
-        if (!this.state.clickedItems[this.state.SS]) {
-            this.setState({clickedItems, loggedIn})
-
-        }
         });
+        window.addEventListener('loggedIn', (e) => {
+            const clickedItems = e.detail.favoriteList;
+            const loggedIn = e.detail.loggedIn
 
+            //if the id of the item is in the userFavorites
+            if (clickedItems.includes(this.state.SS)) {
+                this.setState({clickedItems, loggedIn})
+            }
+
+                //keep the button as if it were clicked once
+            if (!this.state.clickedItems[this.state.SS]) {
+                this.setState({clickedItems, loggedIn})
+
+            }
+        });
         window.addEventListener('loggedOut', (e) => {
             console.log(e.detail)
             const clickedItems = new Array(100).fill(0);
@@ -178,22 +172,27 @@ class App extends Component {
                 items: [],
                 total: 0,
 
-            })
+            });
         }).catch(err => console.log(err))
    };
 
     render() {
-
         return (
 
             <div className="row no-gutters">
 
-                <LeftBox itemNumber={this.state.itemNumber} modelNumber ={this.state.modelNumber} name={this.state.name} ratings={this.state.ratings}
-                avgRating={this.state.avgRating} percentRecommended={this.state.percentRecommended}
-                images={this.state.images}/>
-                <RightBox loggedIn={this.state.loggedIn} price={this.state.price} sendSaveInfo={this.sendSaveInfo} clickedItems={this.state.clickedItems} name={this.state.name} id={this.state.SS} summary={this.state.summary} quantity={this.state.quantity}
-                plusOne={this.plusOne} minusOne={this.minusOne} typeQuantity={this.typeQuantity}
-                addToCart={this.addToCart} cartListener={this.cartListener}/>
+                <LeftBox
+                    itemNumber={this.state.itemNumber} modelNumber ={this.state.modelNumber} name={this.state.name}
+                    ratings={this.state.ratings} avgRating={this.state.avgRating} percentRecommended={this.state.percentRecommended}
+                    images={this.state.images}
+                />
+                <RightBox
+                    loggedIn={this.state.loggedIn} price={this.state.price} sendSaveInfo={this.sendSaveInfo}
+                    clickedItems={this.state.clickedItems} name={this.state.name} id={this.state.SS} summary={this.state.summary}
+                    quantity={this.state.quantity} plusOne={this.plusOne} minusOne={this.minusOne} typeQuantity={this.typeQuantity}
+                    addToCart={this.addToCart} cartListener={this.cartListener}
+                />
+
             </div>
 
         )
